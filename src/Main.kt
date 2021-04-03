@@ -30,14 +30,22 @@ fun main(args: Array<String>)
 
     Maximum_number_of_matrices_v1(Numbers_v1)
 
-    println(Type_checking_v2(10))
-    println(Type_checking_v2('1'))
-    println(Type_checking_v2(10.10f))
-    println(Type_checking_v2("Cristian"))
-    println(Type_checking_v2(true))
-    println(Type_checking_v2(10.10))
+    println(Type_Checking_v2(10))
+    println(Type_Checking_v2('1'))
+    println(Type_Checking_v2(10.10f))
+    println(Type_Checking_v2("Cristian"))
+    println(Type_Checking_v2(true))
+    println(Type_Checking_v2(10.10))
 
     Using_intervals()
+
+    Type_Checking_v3(10)
+    Type_Checking_v3('1')
+    Type_Checking_v3(10.10f)
+    Type_Checking_v3("Cristian")
+    Type_Checking_v3(true)
+    Type_Checking_v3(10.10)
+    Type_Checking_v3(Int)
 
 }
 
@@ -201,7 +209,7 @@ fun Maximum_number_of_matrices_v1(Array: IntArray): Unit
     println("Max: $Max")
 }
 
-fun Type_checking_v2(Object: Any): Any?
+fun Type_Checking_v2(Object: Any): Any?
 {
     val Type: Array<Any> = arrayOf(Int, Float, Char, String, Boolean)
 
@@ -262,4 +270,25 @@ fun Using_intervals(): Unit
         "apple" in items -> println("apple is fine too")
     }
 }
+
+fun Type_Checking_v3(Object: Any)
+{
+    println("\nType_checking_v3: ")
+    println("Object Value: $Object")
+
+    when (Object)
+    {
+        is Byte    -> println("Obiectul este de tip Byte")
+        is Short   -> println("Obiectul este de tip Short")
+        is Int     -> println("Obiectul este de tip Int")
+        is Long    -> println("Obiectul este de tip Long")
+        is Float   -> println("Obiectul este de tip Float")
+        is Double  -> println("Obiectul este de tip Double")
+        is Char    -> println("Obiectul este de tip Char")
+        is String  -> println("Obiectul este de tip String")
+        is Boolean -> println("Obiectul este de tip Boolean")
+        else       -> println("Acest obiect în lista nui.")
+    }
+}
+
 
