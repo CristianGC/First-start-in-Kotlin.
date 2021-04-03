@@ -20,16 +20,24 @@ fun main(args: Array<String>)
     Max_v4(10,20)
     println("Max_v5: ${Max_v5(10,11)}")
 
-    Type_checking_Char_String_Int_Boolean(66)
-    Type_checking_Char_String_Int_Boolean('5')
-    Type_checking_Char_String_Int_Boolean("10000")
-    Type_checking_Char_String_Int_Boolean(true)
-    Type_checking_Char_String_Int_Boolean(println("\nHello Kotlin! )))"))
+    Type_checking_Char_String_Int_Boolean_v1(66)
+    Type_checking_Char_String_Int_Boolean_v1('5')
+    Type_checking_Char_String_Int_Boolean_v1("10000")
+    Type_checking_Char_String_Int_Boolean_v1(true)
+    Type_checking_Char_String_Int_Boolean_v1(println("\nHello Kotlin! )))"))
 
     val Numbers_v1: IntArray = intArrayOf(5,2,3,4,5,6)
     val Numbers_v2: Array<Int> = arrayOf(9,8,7,10,5,8)
 
     Maximum_number_of_matrices_v1(Numbers_v1)
+
+    println(Type_checking_v2(10))
+    println(Type_checking_v2('1'))
+    println(Type_checking_v2(10.10f))
+    println(Type_checking_v2("Cristian"))
+    println(Type_checking_v2(true))
+    println(Type_checking_v2(10.10))
+
 
 
 }
@@ -139,7 +147,7 @@ fun Max_v5(a: Int, b: Int): Int?
 }
 
 //Am obținut un rezultat interesant după afișarea mesajului "Hello Kotlin! )))", sa afișat că tipul este null.
-fun Type_checking_Char_String_Int_Boolean(Object: Any): Boolean?
+fun Type_checking_Char_String_Int_Boolean_v1(Object: Any): Boolean?
 {
     println("\nType_checking: ")
     var Type = ""
@@ -194,3 +202,41 @@ fun Maximum_number_of_matrices_v1(Array: IntArray): Unit
     println("Max: $Max")
 }
 
+fun Type_checking_v2(Object: Any): Any?
+{
+    val Type: Array<Any> = arrayOf(Int, Float, Char, String, Boolean)
+
+    println("\nType_checking_v2: ")
+
+    if (Object is Int)
+    {
+        println("Obiectul este de tip Int")
+        return Type[0]
+    }
+
+    if (Object is Float)
+    {
+        println("Obiectul este de tip Float")
+        return Type[1]
+    }
+
+    if (Object is Char)
+    {
+        println("Obiectul este de tip Char")
+        return Type[2]
+    }
+
+    if (Object is String)
+    {
+        println("Obiectul este de tip String")
+        return Type[3]
+    }
+
+    if (Object is Boolean)
+    {
+        println("Obiectul este de tip Boolean")
+        return Type[4]
+    }
+
+    return null
+}
