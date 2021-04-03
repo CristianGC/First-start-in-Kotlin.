@@ -47,7 +47,7 @@ fun Variables_can_be_changed(): Unit
     var b: Int  = 20
     var c: Int
     c = 30
-    c + b + a
+    c += b + a
 
     println(c)
 }
