@@ -16,6 +16,7 @@ fun main(args: Array<String>)
     println(Max_v2(10,10))
     println(Max_v3(10,10))
     Max_v4(10,20)
+    println("Max_v5: ${Max_v5(10,10)}")
 
 }
 
@@ -110,4 +111,15 @@ fun Max_v4(a: Int, b: Int): Unit
     }
 
     println("Max_4 max: $max" )
+}
+
+// Destul de interesantă este această funcție.
+fun Max_v5(a: Int, b: Int): Int?
+{
+    if(a > b)
+        return a
+    else if (a != b)
+        return b
+    else
+        return null
 }
