@@ -27,7 +27,6 @@ fun main(args: Array<String>)
     Type_checking_Char_String_Int_Boolean_v1(println("\nHello Kotlin! )))"))
 
     val Numbers_v1: IntArray = intArrayOf(5,2,3,4,5,6)
-    val Numbers_v2: Array<Int> = arrayOf(9,8,7,10,5,8)
 
     Maximum_number_of_matrices_v1(Numbers_v1)
 
@@ -38,7 +37,7 @@ fun main(args: Array<String>)
     println(Type_checking_v2(true))
     println(Type_checking_v2(10.10))
 
-
+    Using_intervals()
 
 }
 
@@ -240,3 +239,27 @@ fun Type_checking_v2(Object: Any): Any?
 
     return null
 }
+
+fun Using_intervals(): Unit
+{
+    println("\nUsing_intervals: ")
+    for (g in 0..9)
+        print("$g-")
+        print("\n")
+
+    for (g in 0..10 step 2)
+        print("$g-")
+        print("\n")
+
+    for (g in 9 downTo 0 step 3)
+        print("$g-")
+        print("\n")
+
+    val items = setOf("apple", "banana", "kiwi")
+    when
+    {
+        "orange" in items -> println("juicy")
+        "apple" in items -> println("apple is fine too")
+    }
+}
+
