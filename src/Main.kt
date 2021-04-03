@@ -1,74 +1,75 @@
-fun main(args: Array<String>)
+fun main()
 {
     println("Hello Kotlin!")
 
-    println(suma_v1(54,57))
-    println(suma_v2(23,45))
-    suma_v3(54,12)
-    suma_v4(34,62)
+    println(sumaV1(54,57))
+    println(sumaV2(23,45))
+    sumaV3(54,12)
+    sumaV4(34,62)
 
-    Variables_only_for_reading()
-    Variables_can_be_changed()
-    Multiplication()
-    Using_string_templates()
+    variables_only_for_reading()
+    variables_can_be_changed()
+    multiplication()
+    using_string_templates()
 
-    println(Max_v1(10,10))
-    println(Max_v2(10,10))
-    println(Max_v3(10,10))
-    Max_v4(10,20)
-    println("Max_v5: ${Max_v5(10,11)}")
+    println(max_v1(10,10))
+    println(max_v2(10,10))
+    println(max_v3(10,10))
+    max_v4(10,20)
+    println("Max_v5: ${max_v5(10,11)}")
 
-    Type_checking_Char_String_Int_Boolean_v1(66)
-    Type_checking_Char_String_Int_Boolean_v1('5')
-    Type_checking_Char_String_Int_Boolean_v1("10000")
-    Type_checking_Char_String_Int_Boolean_v1(true)
-    Type_checking_Char_String_Int_Boolean_v1(println("\nHello Kotlin! )))"))
+    type_checking_Char_String_Int_Boolean_v1(66)
+    type_checking_Char_String_Int_Boolean_v1('5')
+    type_checking_Char_String_Int_Boolean_v1("10000")
+    type_checking_Char_String_Int_Boolean_v1(true)
+    type_checking_Char_String_Int_Boolean_v1(println("\nHello Kotlin! )))"))
 
-    val Numbers_v1: IntArray = intArrayOf(5,2,3,4,5,6)
+    val numbers_v1: IntArray = intArrayOf(5,2,3,4,5,6)
 
-    Maximum_number_of_matrices_v1(Numbers_v1)
+    maximum_number_of_matrices_v1(numbers_v1)
 
-    println(Type_Checking_v2(10))
-    println(Type_Checking_v2('1'))
-    println(Type_Checking_v2(10.10f))
-    println(Type_Checking_v2("Cristian"))
-    println(Type_Checking_v2(true))
-    println(Type_Checking_v2(10.10))
+    println(type_Checking_v2(10))
+    println(type_Checking_v2('1'))
+    println(type_Checking_v2(10.10f))
+    println(type_Checking_v2("Cristian"))
+    println(type_Checking_v2(true))
+    println(type_Checking_v2(10.10))
 
-    Using_intervals()
+    using_intervals()
 
-    Type_Checking_v3(10)
-    Type_Checking_v3('1')
-    Type_Checking_v3(10.10f)
-    Type_Checking_v3("Cristian")
-    Type_Checking_v3(true)
-    Type_Checking_v3(10.10)
-    Type_Checking_v3(Int)
+    type_Checking_v3(10)
+    type_Checking_v3('1')
+    type_Checking_v3(10.10f)
+    type_Checking_v3("Cristian")
+    type_Checking_v3(true)
+    type_Checking_v3(10.10)
+    type_Checking_v3(Int)
 
 }
 
-fun suma_v1(a: Int, b: Int): Int
+fun sumaV1(a: Int, b: Int): Int
 {
     return a + b
 }
 
-fun suma_v2(a: Int, b: Int) = a + b
+fun sumaV2(a: Int, b: Int) = a + b
 
-fun suma_v3(a: Int, b: Int): Unit
+fun sumaV3(a: Int, b: Int)
 {
     println(a + b)
 }
 
-fun suma_v4(a: Int, b: Int)
+fun sumaV4(a: Int, b: Int)
 {
     println(a + b)
 }
 
 // Funcționează, dar rezultatul este 1
-fun Variables_only_for_reading(): Unit
+fun variables_only_for_reading()
 {
     val a = 1
-    val b: Int = 1
+    val b: Int
+    b = 1
     val c: Int
     c = 1
     c + b + a
@@ -76,10 +77,10 @@ fun Variables_only_for_reading(): Unit
     println(c)
 }
 
-fun Variables_can_be_changed(): Unit
+fun variables_can_be_changed()
 {
-    var a = 10
-    var b: Int  = 20
+    val a = 10
+    val b = 20
     var c: Int
     c = 30
     c += b + a
@@ -90,22 +91,22 @@ fun Variables_can_be_changed(): Unit
 val x = 3
 var w = 2
 
-fun Multiplication(): Unit
+fun multiplication()
 {
     w *= x
 
     println(w)
 }
 
-fun Using_string_templates(): Unit
+fun using_string_templates()
 {
-    var a = 100
+    val a = 100
     val s1 = "a = $a"
 
     println(s1)
 }
 
-fun Max_v1(a: Int, b: Int): Int
+fun max_v1(a: Int, b: Int): Int
 {
     if(a > b)
         return a
@@ -113,9 +114,9 @@ fun Max_v1(a: Int, b: Int): Int
         return b
 }
 
-fun Max_v2(a: Int, b: Int) = if(a > b) a else b
+fun max_v2(a: Int, b: Int) = if(a > b) a else b
 
-fun Max_v3(a: Int, b: Int): String
+fun max_v3(a: Int, b: Int): String
 {
     if(a > b)
         return "$a"
@@ -125,7 +126,7 @@ fun Max_v3(a: Int, b: Int): String
         return "Nici a nici b nu sunt mai mare."
 }
 
-fun Max_v4(a: Int, b: Int): Unit
+fun max_v4(a: Int, b: Int)
 {
     val max = if (a > b)
     {
@@ -141,7 +142,7 @@ fun Max_v4(a: Int, b: Int): Unit
 }
 
 // Destul de interesantă este această funcție.
-fun Max_v5(a: Int, b: Int): Int?
+fun max_v5(a: Int, b: Int): Int?
 {
     if(a > b)
         return a
@@ -152,7 +153,7 @@ fun Max_v5(a: Int, b: Int): Int?
 }
 
 //Am obținut un rezultat interesant după afișarea mesajului "Hello Kotlin! )))", sa afișat că tipul este null.
-fun Type_checking_Char_String_Int_Boolean_v1(Object: Any): Boolean?
+fun type_checking_Char_String_Int_Boolean_v1(Object: Any): Boolean?
 {
     println("\nType_checking: ")
     var Type = ""
@@ -193,21 +194,21 @@ fun Type_checking_Char_String_Int_Boolean_v1(Object: Any): Boolean?
     }
 }
 
-fun Maximum_number_of_matrices_v1(Array: IntArray): Unit
+fun maximum_number_of_matrices_v1(Array: IntArray)
 {
     println("\nMaximum_number_of_matrices: ")
-    var Max = 0;
+    var Max = 0
 
     for (Item: Int in Array)
     {
         println("Item: $Item")
-        Max = Max_v1(Max, Item)
+        Max = max_v1(Max, Item)
     }
 
     println("Max: $Max")
 }
 
-fun Type_Checking_v2(Object: Any): Any?
+fun type_Checking_v2(Object: Any): Any?
 {
     val Type: Array<Any> = arrayOf(Int, Float, Char, String, Boolean)
 
@@ -246,7 +247,7 @@ fun Type_Checking_v2(Object: Any): Any?
     return null
 }
 
-fun Using_intervals(): Unit
+fun using_intervals()
 {
     println("\nUsing_intervals: ")
     for (g in 0..9)
@@ -269,7 +270,7 @@ fun Using_intervals(): Unit
     }
 }
 
-fun Type_Checking_v3(Object: Any)
+fun type_Checking_v3(Object: Any)
 {
     println("\nType_checking_v3: ")
     println("Object Value: $Object")
