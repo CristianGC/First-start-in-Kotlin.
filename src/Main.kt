@@ -1,5 +1,3 @@
-import javax.sound.sampled.Mixer
-
 fun main(args: Array<String>)
 {
     println("Hello Kotlin!")
@@ -17,6 +15,7 @@ fun main(args: Array<String>)
     println(Max_v1(10,10))
     println(Max_v2(10,10))
     println(Max_v3(10,10))
+    Max_v4(10,20)
 
 }
 
@@ -96,4 +95,19 @@ fun Max_v3(a: Int, b: Int): String
         return "$b"
     else
         return "Nici a nici b nu sunt mai mare."
+}
+
+fun Max_v4(a: Int, b: Int): Unit
+{
+    val max = if (a > b)
+    {
+        print("întoarcere a\n")
+        a
+    }
+    else {
+        print("întoarcere b\n")
+        b
+    }
+
+    println("Max_4 max: $max" )
 }
