@@ -16,7 +16,13 @@ fun main(args: Array<String>)
     println(Max_v2(10,10))
     println(Max_v3(10,10))
     Max_v4(10,20)
-    println("Max_v5: ${Max_v5(10,10)}")
+    println("Max_v5: ${Max_v5(10,11)}")
+
+    Type_checking_Char_String_Int_Boolean(66)
+    Type_checking_Char_String_Int_Boolean('5')
+    Type_checking_Char_String_Int_Boolean("10000")
+    Type_checking_Char_String_Int_Boolean(true)
+    Type_checking_Char_String_Int_Boolean(println("\nHello Kotlin! )))"))
 
 }
 
@@ -123,3 +129,46 @@ fun Max_v5(a: Int, b: Int): Int?
     else
         return null
 }
+
+//Am obținut un rezultat interesant după afișarea mesajului "Hello Kotlin! )))", sa afișat că tipul este null.
+fun Type_checking_Char_String_Int_Boolean(Object: Any): Boolean?
+{
+    println("\nType_checking: ")
+    var Type = ""
+
+    if (Object is String)
+    {
+        println("Obiectul este de tip String")
+        Type = "String"
+    }
+
+    if (Object is Int)
+    {
+        println("Obiectul este de tip Int")
+        Type = "Int"
+    }
+
+    if (Object is Char)
+    {
+        println("Obiectul este de tip Char")
+        Type = "Char"
+    }
+
+    if (Object is Boolean)
+    {
+        println("Obiectul este de tip Boolean")
+        Type = "Boolean"
+    }
+
+    if (Type != "")
+    {
+        println("Type: $Type")
+        return true
+    }
+    else
+    {
+        println("Type: null")
+        return null
+    }
+}
+
