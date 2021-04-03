@@ -8,6 +8,7 @@ fun main(args: Array<String>)
     suma_v4(34,62)
 
     Variables_only_for_reading()
+    Variables_can_be_changed()
 }
 
 fun suma_v1(a: Int, b: Int): Int
@@ -38,3 +39,16 @@ fun Variables_only_for_reading(): Unit
 
     println(c)
 }
+
+// Funcția nu a dat o eroare și rezultatul este 30 în loc de 60.
+fun Variables_can_be_changed(): Unit
+{
+    var a = 10
+    var b: Int  = 20
+    var c: Int
+    c = 30
+    c + b + a
+
+    println(c)
+}
+
