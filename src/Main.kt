@@ -1,3 +1,5 @@
+import javax.lang.model.type.ArrayType
+
 fun main(args: Array<String>)
 {
     println("Hello Kotlin!")
@@ -23,6 +25,12 @@ fun main(args: Array<String>)
     Type_checking_Char_String_Int_Boolean("10000")
     Type_checking_Char_String_Int_Boolean(true)
     Type_checking_Char_String_Int_Boolean(println("\nHello Kotlin! )))"))
+
+    val Numbers_v1: IntArray = intArrayOf(5,2,3,4,5,6)
+    val Numbers_v2: Array<Int> = arrayOf(9,8,7,10,5,8)
+
+    Maximum_number_of_matrices_v1(Numbers_v1)
+
 
 }
 
@@ -170,5 +178,19 @@ fun Type_checking_Char_String_Int_Boolean(Object: Any): Boolean?
         println("Type: null")
         return null
     }
+}
+
+fun Maximum_number_of_matrices_v1(Array: IntArray): Unit
+{
+    println("\nMaximum_number_of_matrices: ")
+    var Max = 0;
+
+    for (Item: Int in Array)
+    {
+        println("Item: $Item")
+        Max = Max_v1(Max, Item)
+    }
+
+    println("Max: $Max")
 }
 
