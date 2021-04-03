@@ -1,3 +1,5 @@
+import javax.sound.sampled.Mixer
+
 fun main(args: Array<String>)
 {
     println("Hello Kotlin!")
@@ -11,6 +13,11 @@ fun main(args: Array<String>)
     Variables_can_be_changed()
     Multiplication()
     Using_string_templates()
+
+    println(Max_v1(10,10))
+    println(Max_v2(10,10))
+    println(Max_v3(10,10))
+
 }
 
 fun suma_v1(a: Int, b: Int): Int
@@ -71,3 +78,22 @@ fun Using_string_templates(): Unit
     println(s1)
 }
 
+fun Max_v1(a: Int, b: Int): Int
+{
+    if(a > b)
+        return a
+    else
+        return b
+}
+
+fun Max_v2(a: Int, b: Int) = if(a > b) a else b
+
+fun Max_v3(a: Int, b: Int): String
+{
+    if(a > b)
+        return "$a"
+    else if (a != b)
+        return "$b"
+    else
+        return "Nici a nici b nu sunt mai mare."
+}
