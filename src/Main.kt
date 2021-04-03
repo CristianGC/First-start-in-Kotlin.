@@ -58,7 +58,6 @@ var w = 2
 fun Multiplication(): Unit
 {
     w *= x
-    w * x
 
     println(w)
 }
