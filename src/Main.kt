@@ -10,6 +10,7 @@ fun main(args: Array<String>)
     Variables_only_for_reading()
     Variables_can_be_changed()
     Multiplication()
+    Using_string_templates()
 }
 
 fun suma_v1(a: Int, b: Int): Int
@@ -61,3 +62,12 @@ fun Multiplication(): Unit
 
     println(w)
 }
+
+fun Using_string_templates(): Unit
+{
+    var a = 100
+    val s1 = "a = $a"
+
+    println(s1)
+}
+
