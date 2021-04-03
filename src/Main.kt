@@ -1,5 +1,3 @@
-import javax.lang.model.type.ArrayType
-
 fun main(args: Array<String>)
 {
     println("Hello Kotlin!")
@@ -70,7 +68,7 @@ fun suma_v4(a: Int, b: Int)
 fun Variables_only_for_reading(): Unit
 {
     val a = 1
-    val b: Int  = 1
+    val b: Int = 1
     val c: Int
     c = 1
     c + b + a
