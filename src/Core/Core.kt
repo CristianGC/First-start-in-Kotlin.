@@ -250,7 +250,7 @@ fun default_values_for_function_parameters(a: Int = 3, Name: String = "Name")
     println("Name: $Name")
 }
 
-fun converts_the_color_string_to_RGB(color: String): IntArray
+private fun converts_the_color_string_to_RGB(color: String): IntArray
 {
     return when (color)
     {
@@ -261,7 +261,7 @@ fun converts_the_color_string_to_RGB(color: String): IntArray
     }
 }
 
-fun converts_RGB_color_to_string(color: IntArray): String
+private fun converts_RGB_color_to_string(color: IntArray): String
 {
     return if (color.contentEquals(intArrayOf(255,0,0)))
     {
@@ -329,4 +329,6 @@ fun transform_from_char_to_int(c: Char): Int
         throw IllegalArgumentException("În afara razei de acțiune")
     return c.toInt() - '0'.toInt()
 }
+
+
 
