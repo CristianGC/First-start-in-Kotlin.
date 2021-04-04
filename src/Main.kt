@@ -45,13 +45,16 @@ fun main()
     type_Checking_v3(10.10)
     type_Checking_v3(Int)
 
-    Default_values_for_function_parameters(20,"Cristian")
-    Default_values_for_function_parameters(10)
-    Default_values_for_function_parameters()
+    default_values_for_function_parameters(20,"Cristian")
+    default_values_for_function_parameters(10)
+    default_values_for_function_parameters()
 
     start_color_conversion()
 
-    Print_1()
+    print_1()
+
+    type_Checking_v3(transform_from_char_to_int('7'))
+
 }
 
 fun sumaV1(a: Int, b: Int): Int
@@ -297,7 +300,7 @@ fun type_Checking_v3(Object: Any)
     }
 }
 
-fun Default_values_for_function_parameters(a: Int = 3, Name: String = "Name")
+fun default_values_for_function_parameters(a: Int = 3, Name: String = "Name")
 {
     println("\nDefault_values_for_function_parameters")
     println("a: $a")
@@ -366,7 +369,7 @@ class We_display_2_functions
 
 val myObject_1 = We_display_2_functions()
 
-fun Print_1()
+fun print_1()
 {
     println("\nPrint_1: ")
     with(myObject_1)
@@ -374,4 +377,12 @@ fun Print_1()
         print_1()
         print_2()
     }
+}
+
+fun transform_from_char_to_int(c: Char): Int
+{
+    println("\ntransform_from_char_to_int: ")
+    if (c !in '0'..'9')
+        throw IllegalArgumentException("În afara razei de acțiune")
+    return c.toInt() - '0'.toInt()
 }
