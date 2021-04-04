@@ -49,6 +49,7 @@ fun main()
     Default_values_for_function_parameters(10)
     Default_values_for_function_parameters()
 
+    start_color_conversion()
 }
 
 fun sumaV1(a: Int, b: Int): Int
@@ -299,5 +300,52 @@ fun Default_values_for_function_parameters(a: Int = 3, Name: String = "Name")
     println("\nDefault_values_for_function_parameters")
     println("a: $a")
     println("Name: $Name")
+}
+
+fun converts_the_color_string_to_RGB(color: String): IntArray
+{
+    return when (color)
+    {
+        "Red"   -> intArrayOf(255,0,0)
+        "Green" -> intArrayOf(0,255,0)
+        "Blue"  -> intArrayOf(0,0,255)
+        else    -> throw IllegalArgumentException("Valoare nevalidă a parametrului culoare.")
+    }
+}
+
+fun converts_RGB_color_to_string(color: IntArray): String
+{
+    return if (color.contentEquals(intArrayOf(255,0,0)))
+    {
+        "Red"
+    }
+    else if (color.contentEquals(intArrayOf(0,255,0)))
+    {
+        "Green"
+    }
+    else if (color.contentEquals(intArrayOf(0,0,255)))
+    {
+        "Blue"
+    }
+    else
+    {
+        throw IllegalArgumentException("Valoare nevalidă a parametrului culoare.")
+    }
+}
+
+fun start_color_conversion()
+{
+    println("\nstart_color_conversion: ")
+    try
+    {
+        println("Color: ${converts_RGB_color_to_string(converts_the_color_string_to_RGB("Red"))}")
+        println("Color: ${converts_RGB_color_to_string(converts_the_color_string_to_RGB("Blue"))}")
+        println("Color: ${converts_RGB_color_to_string(converts_the_color_string_to_RGB("Green"))}")
+        //println("Color: ${converts_RGB_color_to_string(converts_the_color_string_to_RGB("Color"))}")
+    }
+    catch (e: Exception)
+    {
+        throw IllegalStateException(e)
+    }
 }
 
