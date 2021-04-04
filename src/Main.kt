@@ -50,6 +50,8 @@ fun main()
     Default_values_for_function_parameters()
 
     start_color_conversion()
+
+    Print_1()
 }
 
 fun sumaV1(a: Int, b: Int): Int
@@ -349,3 +351,27 @@ fun start_color_conversion()
     }
 }
 
+class We_display_2_functions
+{
+    fun print_1()
+    {
+        println("fun print_1")
+    }
+
+    fun print_2()
+    {
+        println("fun print_2")
+    }
+}
+
+val myObject_1 = We_display_2_functions()
+
+fun Print_1()
+{
+    println("\nPrint_1: ")
+    with(myObject_1)
+    {
+        print_1()
+        print_2()
+    }
+}
