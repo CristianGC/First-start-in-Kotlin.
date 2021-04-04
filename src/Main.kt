@@ -45,6 +45,10 @@ fun main()
     type_Checking_v3(10.10)
     type_Checking_v3(Int)
 
+    Default_values_for_function_parameters(20,"Cristian")
+    Default_values_for_function_parameters(10)
+    Default_values_for_function_parameters()
+
 }
 
 fun sumaV1(a: Int, b: Int): Int
@@ -290,4 +294,10 @@ fun type_Checking_v3(Object: Any)
     }
 }
 
+fun Default_values_for_function_parameters(a: Int = 3, Name: String = "Name")
+{
+    println("\nDefault_values_for_function_parameters")
+    println("a: $a")
+    println("Name: $Name")
+}
 
