@@ -53,10 +53,13 @@ fun main()
 
     start_color_conversion()
 
-    print_1()
+    printMyObject_1()
 
     type_Checking_v3(transform_from_char_to_int('7'))
 
+    val arrayForm = arrayOf("Form","9","8","4","3","57","11")
+    var arrayTo = arrayOf("To","8","3","2","5","1","01")
 
+    copyTheArrayToArray(arrayForm, arrayTo)
 
 }

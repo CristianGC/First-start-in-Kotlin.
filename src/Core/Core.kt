@@ -312,7 +312,7 @@ class We_display_2_functions
 
 val myObject_1 = We_display_2_functions()
 
-fun print_1()
+fun printMyObject_1()
 {
     println("\nPrint_1: ")
     with(myObject_1)
@@ -330,5 +330,22 @@ fun transform_from_char_to_int(c: Char): Int
     return c.toInt() - '0'.toInt()
 }
 
+fun copyTheArrayToArray(from: Array<out String>, to: Array<in String>)
+{
+    for ((index, value) in from.withIndex())
+    {
+        to[index] = value
+    }
 
+    println("\nfrom:")
+    for ((index, value) in from.withIndex())
+    {
+        println("index: $index value: $value")
+    }
 
+    println("\nto:")
+    for ((index, value) in to.withIndex())
+    {
+        println("index: $index value: $value")
+    }
+}
