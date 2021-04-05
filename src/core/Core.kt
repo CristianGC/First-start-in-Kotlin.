@@ -349,3 +349,123 @@ fun copyTheArrayToArray(from: Array<out String>, to: Array<in String>)
         println("index: $index value: $value")
     }
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+
+class Person0
+
+class Person1
+{
+
+}
+
+class Person2(name: String, age :Int)
+{
+
+}
+
+class Person3(var name: String, val age :Int)
+{
+
+}
+
+class Person4 constructor(name: String, age :Int)
+{
+
+}
+
+class Person5 constructor(var name: String, val age :Int)
+{
+
+}
+
+class Person6 private constructor(name: String, age :Int)
+{
+
+}
+
+class Person7 private constructor(var name: String, val age :Int)
+{
+
+}
+
+class Person8 internal constructor(name: String, age :Int)
+{
+
+}
+
+class Person9 internal constructor(var name: String, val age :Int)
+{
+    init
+    {
+        println("\nPerson9")
+        println("name: $name")
+        println("age: $age")
+    }
+}
+
+class Person10 (name: String, age :Int)
+{
+    val firstProperty = name
+    init
+    {
+        println("\nPerson10")
+        println("firstProperty name: $firstProperty")
+    }
+
+    val secondProperty  = age
+    init
+    {
+        println("secondProperty age: $secondProperty")
+    }
+}
+
+class Person11
+{
+    init
+    {
+        println("\nPerson11")
+        println("Bloc de inițializare")
+    }
+
+    constructor(name: String, age :Int)
+    {
+        println("name: $name")
+        println("age: $age")
+    }
+}
+
+// Automat este creat constructor public.
+abstract class Person12
+{
+
+}
+// Nu este creat automat constructor.
+abstract class Person13 private constructor()
+{
+
+}
+
+
+
+fun main()
+{
+    val _object0 = Person0()
+    val _object1 = Person1()
+    val _object2 = Person2("Cristian",25)
+    val _object3 = Person3("Cristian",25)
+    val _object4 = Person4("Cristian",25)
+    val _object5 = Person5("Cristian",25)
+    //val _object6 = Person6("Cristian",25)
+    //val _object7 = Person7("Cristian",25)
+    val _object8 = Person8("Cristian",25)
+    val _object9 = Person9("Cristian",25)
+    val _object10 = Person10("Cristian",25)
+    val _object11 = Person11("Cristian",25)
+    //Person12()
+    //Person13()
+
+
+}
+
+
