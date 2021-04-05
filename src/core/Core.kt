@@ -446,7 +446,12 @@ abstract class Person13 private constructor()
 
 }
 
-open class Person14(name: String, age: Int)
+interface Man
+{
+    val whatKindOfMan: String
+}
+
+open class Person14(name: String, age: Int, override val whatKindOfMan: String = "Good"): Man
 {
     private var myName: String
     private var myAge: Int
@@ -458,7 +463,7 @@ open class Person14(name: String, age: Int)
         myName = name
         myAge = age
         println("Person14-------")
-        println("name: $name age: $age myLevel: $myLevel")
+        println("name: $name age: $age myLevel: $myLevel whatKindOfMan: ${whatKindOfMan}")
     }
 
     open fun getName(): String
@@ -477,10 +482,13 @@ open class Person15(myName: String, myAge: Int) : Person14(myName, myAge)
     final override val myLevel: Int
         get() = super.myLevel + 3
 
+    final override val whatKindOfMan: String
+        get() = "Bad"
+
     init
     {
         println("Person15-------")
-        println("myName: $myName myAge: $myAge myLevel: ${myLevel + 10}")
+        println("myName: $myName myAge: $myAge myLevel: ${myLevel + 10} whatKindOfMan: ${super.whatKindOfMan}")
     }
 
     override fun getName(): String
@@ -504,7 +512,7 @@ class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
     init
     {
         println("Person16-------")
-        println("myName: $myName myAge: $myAge myLevel: ${super.myLevel}")
+        println("myName: $myName myAge: $myAge myLevel: ${super.myLevel} whatKindOfMan: $whatKindOfMan")
     }
 
     override fun getName(): String
