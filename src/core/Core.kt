@@ -533,7 +533,7 @@ final class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
 
 }
 
-class Person17: Person14("Cristian",25)
+class Person17 : Person14("Cristian",25)
 {
     override fun printlnSpaceGalaxy()
     {
@@ -559,13 +559,13 @@ open class Person18 (var name: String, var age: Int)
         println("\nPerson18:")
     }
 
-    fun printlnName(): Person18
+    open fun printlnName(): Person18
     {
         println("Name: ${name}")
         return this
     }
 
-    fun printlnAge(): Person18
+    open fun printlnAge(): Person18
     {
         println("Age: ${age}")
         return this
@@ -584,6 +584,11 @@ open class Person18 (var name: String, var age: Int)
             println("Age: ${age}")
             return this
         }
+
+        fun prinlnNameAge(): String
+        {
+            return "Name: ${name}" + "Age: ${age}"
+        }
     }
 
     open fun displayOfBasicPeople()
@@ -591,6 +596,31 @@ open class Person18 (var name: String, var age: Int)
         println("displayOfBasicPeople")
         Person18("Cristian",25).Println().name().age()
     }
+}
+
+interface Factory<T>
+{
+    fun create(): T
+}
+
+interface Factory2<T>
+{
+    fun create2(): T
+}
+
+abstract class Person19()
+{
+    init
+    {
+        println("\nPerson19")
+    }
+
+    companion object : Factory<Person18>, Factory2<Person14>
+    {
+        override fun create(): Person18 = Person18("Cristian",25)
+        override fun create2(): Person14 = Person14("Cristian",25)
+    }
+
 }
 
 fun main()
@@ -640,6 +670,14 @@ fun main()
     Person18("Man",20).printlnName()
     Person18("Man",20).printlnAge()
     Person18("Man",20).printlnName().printlnAge().displayOfBasicPeople()
+
+    val obj1 = Person19.create()
+    obj1.displayOfBasicPeople()
+
+    val obj2 = Person19.create2()
+    obj2.printlnSpaceGalaxy()
+
+
 
 }
 
