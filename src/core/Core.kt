@@ -446,11 +446,39 @@ abstract class Person13 private constructor()
 
 }
 
+open class Person14(name: String, age: Int)
+{
+    init
+    {
+        println("\nPerson14")
+        println("name: $name age: $age")
+    }
+}
 
+open class Person15(myName: String, myAge: Int) : Person14(myName, myAge)
+{
+    init
+    {
+        println("\nPerson15")
+        println("myName: $myName myAge: $myAge")
+    }
+}
+
+class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
+{
+    init
+    {
+        println("\nPerson16")
+        println("myName: $myName myAge: $myAge")
+    }
+}
 
 fun main()
 {
     val _object0 = Person0()
+    println("_object0: ${_object0.hashCode()}")
+    println("_object0: ${_object0.toString()}")
+    //rintln("_object0: ${_object0.equals()}")
     val _object1 = Person1()
     val _object2 = Person2("Cristian",25)
     val _object3 = Person3("Cristian",25)
@@ -464,6 +492,15 @@ fun main()
     val _object11 = Person11("Cristian",25)
     //Person12()
     //Person13()
+    println("\n_object14:")
+    val _object14 = Person14("Cristian",25)
+
+    println("\n_object15:")
+    val _object15 = Person15("Cristian",25)
+
+    println("\n_object16:")
+    val _object16 = Person16("Cristian",25)
+
 
 
 }
