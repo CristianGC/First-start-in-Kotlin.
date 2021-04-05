@@ -1,7 +1,5 @@
 package core
 
-import java.awt.Rectangle
-
 fun sumaV1(a: Int, b: Int): Int
 {
     return a + b
@@ -422,7 +420,7 @@ class Person10 (name: String, age :Int)
     }
 }
 
-class Person11
+class Person11(name: String, age: Int)
 {
     init
     {
@@ -430,8 +428,7 @@ class Person11
         println("Bloc de inițializare")
     }
 
-    constructor(name: String, age :Int)
-    {
+    init {
         println("name: $name")
         println("age: $age")
     }
@@ -521,7 +518,7 @@ open class Person15(myName: String, myAge: Int) : Person14(myName, myAge), Man
     }
 }
 
-class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
+final class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
 {
     init
     {
@@ -552,6 +549,47 @@ class Person17: Person14("Cristian",25)
             println("galaxy: $galaxy")
             super@Person17.printlnSpaceGalaxy()
         }
+    }
+}
+
+open class Person18 (var name: String, var age: Int)
+{
+    init
+    {
+        println("\nPerson18:")
+    }
+
+    fun printlnName(): Person18
+    {
+        println("Name: ${name}")
+        return this
+    }
+
+    fun printlnAge(): Person18
+    {
+        println("Age: ${age}")
+        return this
+    }
+
+    inner class Println
+    {
+        fun name(): Println
+        {
+            println("Name: ${name}")
+            return this
+        }
+
+        fun age(): Println
+        {
+            println("Age: ${age}")
+            return this
+        }
+    }
+
+    open fun displayOfBasicPeople()
+    {
+        println("displayOfBasicPeople")
+        Person18("Cristian",25).Println().name().age()
     }
 }
 
@@ -596,6 +634,12 @@ fun main()
     _object17.printlnSpaceGalaxy()
 
     Person17().PrintlnGalaxy("Home").printlnSpaceGalaxy()
+
+    Person18("Man",20).Println().name().age()
+    Person18("Man",20).displayOfBasicPeople()
+    Person18("Man",20).printlnName()
+    Person18("Man",20).printlnAge()
+    Person18("Man",20).printlnName().printlnAge().displayOfBasicPeople()
 
 }
 
