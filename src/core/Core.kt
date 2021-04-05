@@ -448,10 +448,24 @@ abstract class Person13 private constructor()
 
 open class Person14(name: String, age: Int)
 {
+    private var myName: String
+    private var myAge: Int
     init
     {
-        println("\nPerson14")
+        myName = name
+        myAge = age
+        println("Person14-------")
         println("name: $name age: $age")
+    }
+
+    open fun getName(): String
+    {
+        return myName
+    }
+
+    open fun getAge(): Int
+    {
+        return myAge
     }
 }
 
@@ -459,8 +473,23 @@ open class Person15(myName: String, myAge: Int) : Person14(myName, myAge)
 {
     init
     {
-        println("\nPerson15")
+        println("Person15-------")
         println("myName: $myName myAge: $myAge")
+    }
+
+    override fun getName(): String
+    {
+        return "+++${super.getName()}+++"
+    }
+
+    fun getSuperGetName(): String
+    {
+        return super.getName()
+    }
+
+    final override fun getAge(): Int
+    {
+        return super.getAge() + 10
     }
 }
 
@@ -468,9 +497,15 @@ class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
 {
     init
     {
-        println("\nPerson16")
+        println("Person16-------")
         println("myName: $myName myAge: $myAge")
     }
+
+    override fun getName(): String
+    {
+        return "---${super.getSuperGetName()}---"
+    }
+
 }
 
 fun main()
@@ -492,14 +527,21 @@ fun main()
     val _object11 = Person11("Cristian",25)
     //Person12()
     //Person13()
+
     println("\n_object14:")
     val _object14 = Person14("Cristian",25)
+    println("_object14 getName: ${_object14.getName()}")
+    println("_object14 getAge: ${_object14.getAge()}")
 
     println("\n_object15:")
     val _object15 = Person15("Cristian",25)
+    println("_object15 getName: ${_object15.getName()}")
+    println("_object15 getAge: ${_object15.getAge()}")
 
     println("\n_object16:")
     val _object16 = Person16("Cristian",25)
+    println("_object16 getName: ${_object16.getName()}")
+    println("_object16 getAge: ${_object16.getAge()}")
 
 
 
