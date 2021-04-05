@@ -450,12 +450,15 @@ open class Person14(name: String, age: Int)
 {
     private var myName: String
     private var myAge: Int
+
+    open val myLevel: Int = 0
+
     init
     {
         myName = name
         myAge = age
         println("Person14-------")
-        println("name: $name age: $age")
+        println("name: $name age: $age myLevel: $myLevel")
     }
 
     open fun getName(): String
@@ -471,10 +474,13 @@ open class Person14(name: String, age: Int)
 
 open class Person15(myName: String, myAge: Int) : Person14(myName, myAge)
 {
+    final override val myLevel: Int
+        get() = super.myLevel + 3
+
     init
     {
         println("Person15-------")
-        println("myName: $myName myAge: $myAge")
+        println("myName: $myName myAge: $myAge myLevel: ${myLevel + 10}")
     }
 
     override fun getName(): String
@@ -498,7 +504,7 @@ class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
     init
     {
         println("Person16-------")
-        println("myName: $myName myAge: $myAge")
+        println("myName: $myName myAge: $myAge myLevel: ${super.myLevel}")
     }
 
     override fun getName(): String
