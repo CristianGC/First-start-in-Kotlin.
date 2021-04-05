@@ -1,5 +1,7 @@
 package core
 
+import java.awt.Rectangle
+
 fun sumaV1(a: Int, b: Int): Int
 {
     return a + b
@@ -449,9 +451,11 @@ abstract class Person13 private constructor()
 interface Man
 {
     val whatKindOfMan: String
+    var spaceGalaxy: String
+    fun printlnSpaceGalaxy(){}
 }
 
-open class Person14(name: String, age: Int, override val whatKindOfMan: String = "Good"): Man
+open class Person14(name: String, age: Int, override val whatKindOfMan: String = "Good", final override var spaceGalaxy: String = "It hosts a Kotlin galaxy :)"): Man
 {
     private var myName: String
     private var myAge: Int
@@ -463,7 +467,7 @@ open class Person14(name: String, age: Int, override val whatKindOfMan: String =
         myName = name
         myAge = age
         println("Person14-------")
-        println("name: $name age: $age myLevel: $myLevel whatKindOfMan: ${whatKindOfMan}")
+        println("name: $name age: $age myLevel: $myLevel whatKindOfMan: ${whatKindOfMan} spaceGalaxy: ${spaceGalaxy}")
     }
 
     open fun getName(): String
@@ -475,9 +479,14 @@ open class Person14(name: String, age: Int, override val whatKindOfMan: String =
     {
         return myAge
     }
+
+    override fun printlnSpaceGalaxy()
+    {
+        println("Person14 spaceGalaxy: ${spaceGalaxy}")
+    }
 }
 
-open class Person15(myName: String, myAge: Int) : Person14(myName, myAge)
+open class Person15(myName: String, myAge: Int) : Person14(myName, myAge), Man
 {
     final override val myLevel: Int
         get() = super.myLevel + 3
@@ -488,7 +497,7 @@ open class Person15(myName: String, myAge: Int) : Person14(myName, myAge)
     init
     {
         println("Person15-------")
-        println("myName: $myName myAge: $myAge myLevel: ${myLevel + 10} whatKindOfMan: ${super.whatKindOfMan}")
+        println("myName: $myName myAge: $myAge myLevel: ${myLevel + 10} whatKindOfMan: ${super.whatKindOfMan} spaceGalaxy: ${spaceGalaxy}")
     }
 
     override fun getName(): String
@@ -505,6 +514,11 @@ open class Person15(myName: String, myAge: Int) : Person14(myName, myAge)
     {
         return super.getAge() + 10
     }
+
+    override fun printlnSpaceGalaxy()
+    {
+        println("Person15 spaceGalaxy: ${spaceGalaxy}")
+    }
 }
 
 class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
@@ -512,7 +526,7 @@ class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
     init
     {
         println("Person16-------")
-        println("myName: $myName myAge: $myAge myLevel: ${super.myLevel} whatKindOfMan: $whatKindOfMan")
+        println("myName: $myName myAge: $myAge myLevel: ${super.myLevel} whatKindOfMan: $whatKindOfMan spaceGalaxy: ${spaceGalaxy}")
     }
 
     override fun getName(): String
@@ -520,6 +534,25 @@ class Person16(myName: String, myAge: Int) : Person15(myName, myAge)
         return "---${super.getSuperGetName()}---"
     }
 
+}
+
+class Person17: Person14("Cristian",25)
+{
+    override fun printlnSpaceGalaxy()
+    {
+        println("\nPerson17: ")
+        super<Person14>.printlnSpaceGalaxy()
+    }
+
+    inner class PrintlnGalaxy(var galaxy: String)
+    {
+        fun printlnSpaceGalaxy()
+        {
+            println("\nclass PrintlnGalaxy: ")
+            println("galaxy: $galaxy")
+            super@Person17.printlnSpaceGalaxy()
+        }
+    }
 }
 
 fun main()
@@ -546,18 +579,23 @@ fun main()
     val _object14 = Person14("Cristian",25)
     println("_object14 getName: ${_object14.getName()}")
     println("_object14 getAge: ${_object14.getAge()}")
+    _object14.printlnSpaceGalaxy()
 
     println("\n_object15:")
     val _object15 = Person15("Cristian",25)
     println("_object15 getName: ${_object15.getName()}")
     println("_object15 getAge: ${_object15.getAge()}")
+    _object15.printlnSpaceGalaxy()
 
     println("\n_object16:")
     val _object16 = Person16("Cristian",25)
     println("_object16 getName: ${_object16.getName()}")
     println("_object16 getAge: ${_object16.getAge()}")
 
+    val _object17 = Person17()
+    _object17.printlnSpaceGalaxy()
 
+    Person17().PrintlnGalaxy("Home").printlnSpaceGalaxy()
 
 }
 
