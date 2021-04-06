@@ -617,11 +617,37 @@ abstract class Person19()
 
     companion object : Factory<Person18>, Factory2<Person14>
     {
-        override fun create(): Person18 = Person18("Cristian",25)
-        override fun create2(): Person14 = Person14("Cristian",25)
+        final override fun create(): Person18 = Person18("Cristian",25)
+        final override fun create2(): Person14 = Person14("Cristian",25)
     }
 
 }
+
+class Person20
+{
+    init
+    {
+        println("Person20")
+    }
+
+    companion object
+    {
+        const val SUBSYSTEM_DEPRECATED: String = "Acest subsistem este învechit"
+    }
+
+    @Deprecated(Companion.SUBSYSTEM_DEPRECATED) fun oldFun(str: String)
+    {
+        println("oldFun $str Cristian")
+    }
+
+    fun newFun(str: String)
+    {
+        println("newFun $str Cristian")
+    }
+
+}
+
+
 
 fun main()
 {
@@ -676,6 +702,16 @@ fun main()
 
     val obj2 = Person19.create2()
     obj2.printlnSpaceGalaxy()
+
+    val obj3 = Person20()
+    obj3.oldFun("Salut")
+    obj3.newFun("Salut")
+
+    ///https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/
+    if (Person20::class.isCompanion)
+    {
+        println("class: Person20 Această clasă are un obiect companion.")
+    }
 
 
 
