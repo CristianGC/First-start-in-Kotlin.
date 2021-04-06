@@ -660,6 +660,10 @@ class Person20
         println(isEven.filter(::isEven))
     }
 
+    private fun weCheckTheName(name: String) = name == "Cristian" || name == "Cristina" || name == "Sanda" || name == "Masa" || name == "Nastea"
+
+    val thisIsTheName: (String) -> Boolean = ::weCheckTheName
+
 }
 
 
@@ -729,6 +733,12 @@ fun main()
     }
 
     obj3.weDisplayOddAndEvenNumbersFromTheList()
+
+    val name = "Sanda"
+    if (obj3.thisIsTheName(name))
+    {
+        println("Acest nume este: $name")
+    }
 
 
 
