@@ -706,7 +706,20 @@ class Person20
 
 }
 
+class Person21
+{
+    init
+    {
+        println("Person21")
+    }
 
+    fun function(factory : () -> Person20)
+    {
+        val f : Person20 = factory()
+        f.oldFun("Hi")
+        f.newFun("Hi")
+    }
+}
 
 fun main(args: Array<String>)
 {
@@ -784,7 +797,8 @@ fun main(args: Array<String>)
 
     obj3.weCheckIfTheWordLengthIsEvenOrOdd2()
 
-
+    val obj4 = Person21()
+    obj4.function { Person20() }
 }
 
 
