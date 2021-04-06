@@ -1,6 +1,6 @@
 import core.*
 
-fun main()
+fun main(args: Array<String>)
 {
     println("Hello Kotlin!")
 

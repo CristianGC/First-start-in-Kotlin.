@@ -664,11 +664,29 @@ class Person20
 
     val thisIsTheName: (String) -> Boolean = ::weCheckTheName
 
+    // La moment nu prea inteleg cum functioneaza dar voi afla.
+    // Prima funcție include a doua funcție
+    fun <A, B, C> compose(fun1: (B) -> C, fun2: (A) -> B) : (A) -> C
+    {
+        return { x -> fun1(fun2(x)) }
+    }
+
+    fun length(s: String) = s.length
+
+    fun weCheckIfTheWordLengthIsEvenOrOdd()
+    {
+        val oddLength = compose(::isOdd, ::length)
+        val strings = listOf("1", "12", "123", "1234", "12345", "123456")
+        println("weCheckIfTheWordLengthIsEvenOrOdd: ")
+        println(strings.filter(oddLength))
+    }
+
+
 }
 
 
 
-fun main()
+fun main(args: Array<String>)
 {
     val _object0 = Person0()
     println("_object0: ${_object0.hashCode()}")
@@ -739,6 +757,8 @@ fun main()
     {
         println("Acest nume este: $name")
     }
+
+    obj3.weCheckIfTheWordLengthIsEvenOrOdd()
 
 
 
