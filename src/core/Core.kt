@@ -627,7 +627,7 @@ class Person20
 {
     init
     {
-        println("Person20")
+        println("\nPerson20")
     }
 
     companion object
@@ -643,6 +643,21 @@ class Person20
     fun newFun(str: String)
     {
         println("newFun $str Cristian")
+    }
+
+    private fun isOdd(x: Int) = x % 2 != 0
+    private fun isEven(x: Int) = x % 2 == 0
+
+    fun weDisplayOddAndEvenNumbersFromTheList()
+    {
+        val isOdd = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val isEven = listOf(9, 8, 7, 6, 5, 4, 3, 2, 1)
+
+        println("isOdd: ")
+        println(isOdd.filter(::isOdd))
+
+        println("isEven: ")
+        println(isEven.filter(::isEven))
     }
 
 }
@@ -712,6 +727,8 @@ fun main()
     {
         println("class: Person20 Această clasă are un obiect companion.")
     }
+
+    obj3.weDisplayOddAndEvenNumbersFromTheList()
 
 
 
