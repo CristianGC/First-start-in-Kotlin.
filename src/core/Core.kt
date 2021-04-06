@@ -645,9 +645,6 @@ class Person20
         println("newFun $str Cristian")
     }
 
-    private fun isOdd(x: Int) = x % 2 != 0
-    private fun isEven(x: Int) = x % 2 == 0
-
     fun weDisplayOddAndEvenNumbersFromTheList()
     {
         val isOdd = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
@@ -671,13 +668,38 @@ class Person20
         return { x -> fun1(fun2(x)) }
     }
 
-    fun length(s: String) = s.length
-
     fun weCheckIfTheWordLengthIsEvenOrOdd()
     {
         val oddLength = compose(::isOdd, ::length)
         val strings = listOf("1", "12", "123", "1234", "12345", "123456")
         println("weCheckIfTheWordLengthIsEvenOrOdd: ")
+        println(strings.filter(oddLength))
+    }
+
+
+
+    fun <VALUE, Introduction1, Introduction2, theOutcome> compose2
+            (
+                fun1: (Introduction2) -> theOutcome,
+                fun2: (Introduction1) -> Introduction2,
+                fun3: (VALUE) -> Introduction1
+            ) : (VALUE) -> theOutcome
+    {
+        return { R -> fun1(fun2(fun3(R))) }
+    }
+
+    private fun length(s: String) = s.length
+
+    private fun isOdd(x: Int) = x % 2 != 0
+    private fun isEven(x: Int) = x % 2 == 0
+
+    private fun weInvertTheBoolValue(b: Boolean) = b != true
+
+    fun weCheckIfTheWordLengthIsEvenOrOdd2()
+    {
+        val oddLength = compose2(::weInvertTheBoolValue, ::isOdd, ::length)
+        val strings = listOf("1", "12", "123", "1234", "12345", "123456")
+        println("\nweCheckIfTheWordLengthIsEvenOrOdd2: ")
         println(strings.filter(oddLength))
     }
 
@@ -760,6 +782,7 @@ fun main(args: Array<String>)
 
     obj3.weCheckIfTheWordLengthIsEvenOrOdd()
 
+    obj3.weCheckIfTheWordLengthIsEvenOrOdd2()
 
 
 }
