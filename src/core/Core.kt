@@ -760,6 +760,87 @@ public class Person22
 
 }
 
+class Person23
+{
+    constructor()
+    constructor(num: Int, gap: Int)
+    {
+        number = num
+        step = gap
+    }
+
+    init
+    {
+        println("\nPerson23")
+    }
+
+    var index = 0
+        private set
+        get()
+        {
+            return field + 10
+        }
+
+    fun printlnIndex1()
+    {
+        println("printlnIndex 1 index: ${index}")
+        index = index
+    }
+
+    fun printlnIndex2()
+    {
+        println("printlnIndex 2 index: ${index}")
+        index = index
+    }
+
+    fun printlnIndex3()
+    {
+        println("printlnIndex 3 index: ${index}")
+        index = index
+    }
+
+    var number = 0
+        get() {return field}
+        private set(value)
+        {
+            field = value
+        }
+
+    var step = 0
+        get() {return field}
+        private set(value)
+        {
+            if (step % 2 == 0)
+                field = value + 10
+            else
+            {
+                field = value - 10
+                printWarning(value)
+            }
+        }
+
+    private fun printWarning(value: Int)
+    {
+        println("step: Valoarea este setată la minus 1. value: $value")
+    }
+
+    val stepNoOne: Boolean
+        get()
+        {
+            return step != 1
+        }
+
+
+    fun printlnNumberStep()
+    {
+        println("number: $number")
+        println("step: $step")
+    }
+
+}
+
+
+
 fun main(args: Array<String>)
 {
     val _object0 = Person0()
@@ -843,6 +924,16 @@ fun main(args: Array<String>)
     obj5.startLateinitWork()
     obj5.startLazyWork()
 
+    val obj6 = Person23(10,10)
+    println("obj6.stepNoOne: ${obj6.stepNoOne}")
+    obj6.printlnNumberStep()
+    obj6.printlnIndex1()
+    obj6.printlnIndex2()
+    obj6.printlnIndex3()
+
 }
+
+
+
 
 
