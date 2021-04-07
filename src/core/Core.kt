@@ -719,6 +719,45 @@ class Person21
         f.oldFun("Hi")
         f.newFun("Hi")
     }
+
+    fun method()
+    {
+        println("method")
+    }
+}
+
+public class Person22
+{
+    init
+    {
+        println("\nPerson22")
+    }
+    lateinit var lateinitWork: Person21
+    fun startLateinitWork()
+    {
+        if (!::lateinitWork.isInitialized)
+        {
+            println("lateinitWork: Nu este inițializat")
+            lateinitWork = Person21()
+        }
+
+        if (::lateinitWork.isInitialized)
+        {
+            println("lateinitWork: Este inițializată")
+        }
+    }
+
+    val lazyWork: String by lazy {
+        println("Start: lazyWork")
+        "End: lazyWork"
+    }
+
+    fun startLazyWork()
+    {
+        println(lazyWork)
+        println(lazyWork)
+    }
+
 }
 
 fun main(args: Array<String>)
@@ -799,6 +838,11 @@ fun main(args: Array<String>)
 
     val obj4 = Person21()
     obj4.function { Person20() }
+
+    val obj5 = Person22()
+    obj5.startLateinitWork()
+    obj5.startLazyWork()
+
 }
 
 
