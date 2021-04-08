@@ -676,8 +676,6 @@ class Person20
         println(strings.filter(oddLength))
     }
 
-
-
     fun <VALUE, Introduction1, Introduction2, theOutcome> compose2
             (
                 fun1: (Introduction2) -> theOutcome,
@@ -829,8 +827,7 @@ class Person23
         {
             return step != 1
         }
-
-
+    
     fun printlnNumberStep()
     {
         println("number: $number")
@@ -839,7 +836,61 @@ class Person23
 
 }
 
+interface printlnNameAge
+{
+    fun printlnName()
+    fun printlnAge()
+}
 
+interface printlnProfession1
+{
+    fun printlnProfession()
+    {
+        println("Administratorul planetei")
+    }
+}
+
+interface printlnProfession2
+{
+    fun printlnProfession()
+    {
+        println("Programator Galaxy")
+    }
+}
+
+class Person24 : printlnNameAge, printlnProfession1, printlnProfession2
+{
+    init
+    {
+        println("\nPerson24")
+    }
+
+    constructor()
+    constructor(name: String, age: Int)
+    {
+        this.name = name
+        this.age = age
+    }
+
+    protected lateinit var name: String
+    protected var age: Int = 0
+
+    final override fun printlnName()
+    {
+        println("Name: ${this.name}")
+    }
+
+    final override fun printlnAge()
+    {
+        println("Age: ${this.age}")
+    }
+
+    final override fun printlnProfession()
+    {
+        super<printlnProfession1>.printlnProfession()
+        super<printlnProfession2>.printlnProfession()
+    }
+}
 
 fun main(args: Array<String>)
 {
@@ -931,9 +982,9 @@ fun main(args: Array<String>)
     obj6.printlnIndex2()
     obj6.printlnIndex3()
 
+    val obj7 = Person24("Cristian",25)
+    obj7.printlnName()
+    obj7.printlnAge()
+    obj7.printlnProfession()
+
 }
-
-
-
-
-
