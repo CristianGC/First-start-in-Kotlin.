@@ -892,6 +892,34 @@ class Person24 : printlnNameAge, printlnProfession1, printlnProfession2
     }
 }
 
+open class Person25
+{
+    init
+    {
+        println("\nPerson25")
+    }
+
+    lateinit var name: String
+    var age = 0
+
+    constructor()
+    constructor(name: String, age: Int)
+    {
+        this.name = name
+        this.age = age
+    }
+}
+
+fun Person25.printlnName()
+{
+    println(this.name)
+}
+
+fun Person25.printlnAge()
+{
+    println(this.age)
+}
+
 fun main(args: Array<String>)
 {
     val _object0 = Person0()
@@ -987,4 +1015,10 @@ fun main(args: Array<String>)
     obj7.printlnAge()
     obj7.printlnProfession()
 
+    val obj8 = Person25("Cristian",25)
+    obj8.printlnName()
+    obj8.printlnAge()
+
+    Person25("Cristiam",25).printlnName()
+    Person25("Cristiam",25).printlnAge()
 }
