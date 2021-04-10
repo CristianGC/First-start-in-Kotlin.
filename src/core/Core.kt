@@ -920,6 +920,8 @@ fun Person25.printlnAge()
     println(this.age)
 }
 
+data class Person26(val name: String, val age: Int)
+
 fun main(args: Array<String>)
 {
     val _object0 = Person0()
