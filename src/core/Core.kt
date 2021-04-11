@@ -921,9 +921,16 @@ fun Person25.printlnAge()
 }
 
 data class Person26(val name: String, val age: Int)
+{
+    init
+    {
+        println("\nPerson26")
+    }
+}
 
 fun main(args: Array<String>)
 {
+    /*
     val _object0 = Person0()
     println("_object0: ${_object0.hashCode()}")
     println("_object0: ${_object0.toString()}")
@@ -1023,4 +1030,8 @@ fun main(args: Array<String>)
 
     Person25("Cristiam",25).printlnName()
     Person25("Cristiam",25).printlnAge()
+    */
+
+    Person26("Cristian",25)
+
 }
