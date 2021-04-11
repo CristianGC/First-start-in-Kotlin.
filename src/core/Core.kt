@@ -928,6 +928,10 @@ data class Person26(val name: String, val age: Int)
     }
 }
 
+var Person26.Index: Int
+    get() = 30 - 3
+    set(value) {}
+
 fun main(args: Array<String>)
 {
     /*
@@ -1032,6 +1036,8 @@ fun main(args: Array<String>)
     Person25("Cristiam",25).printlnAge()
     */
 
-    Person26("Cristian",25)
+    val obj9 = Person26("Cristian",25)
+    println("obj9.Index: ${obj9.Index}")
+
 
 }
