@@ -950,11 +950,25 @@ class Person27(private val name: String, private val age: Int)
         println("fun printlnNameAge")
         printlnName(name)
         printlnAge(age)
+
+        val thisPerson26printlnNameAge = this@printlnNameAge
+        val thisPerson27 = this@Person27
     }
 
     fun caller(p: Person26)
     {
         p.printlnNameAge()
+    }
+
+    inner class innerPerson27
+    {
+        fun Boolean.isTrue()
+        {
+            val thisPerson27 = this@Person27
+            val thisinnerPerson27 = this@innerPerson27
+            val myBoolean1 = this
+            val myBoolean2 = this@isTrue
+        }
     }
 }
 
