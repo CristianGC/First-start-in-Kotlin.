@@ -920,15 +920,85 @@ fun Person25.printlnAge()
     println(this.age)
 }
 
-data class Person26(val name: String, val age: Int)
+class Person26
 {
     init
     {
         println("\nPerson26")
     }
+
+    internal fun printlnName(name: String)
+    {
+        println("name: ${name}")
+    }
 }
 
-var Person26.Index: Int
-    get() = 30 - 3
-    set(value) {}
+class Person27(private val name: String, private val age: Int)
+{
+    init
+    {
+        println("\nPerson27")
+    }
+
+    private fun printlnAge(age: Int)
+    {
+        println("age: ${age}")
+    }
+
+    private fun Person26.printlnNameAge()
+    {
+        println("fun printlnNameAge")
+        printlnName(name)
+        printlnAge(age)
+    }
+
+    fun caller(p: Person26)
+    {
+        p.printlnNameAge()
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

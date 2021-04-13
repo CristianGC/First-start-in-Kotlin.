@@ -166,8 +166,8 @@ fun main(args: Array<String>)
         Person25("Cristiam",25).printlnAge()
     */
 
-    val obj9 = Person26("Cristian",25)
-    println("obj9.Index: ${obj9.Index}")
+    val obj9 = Person27("Cristian",25)
+    obj9.caller(Person26())
 
 
 
