@@ -980,7 +980,7 @@ open class Person28: BasePerson
 {
     init
     {
-        println("Person28")
+        println("\nPerson28")
     }
 
     override var name: String = ""
@@ -999,6 +999,16 @@ open class Person28: BasePerson
     }
 
     fun copy(name: String = this.name, age: Int = this.age) = Person28(name, age)
+
+    operator fun component1(): String
+    {
+        return "Person28: " + name
+    }
+
+    operator fun component2(): Int
+    {
+        return ++age
+    }
 }
 
 

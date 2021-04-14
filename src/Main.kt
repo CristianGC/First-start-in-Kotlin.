@@ -175,4 +175,7 @@ fun main(args: Array<String>)
     println("obj11 name: ${obj11.name}")
     println("obj11 age: ${obj11.age}")
 
+    val (name, age) = Person28("Cristian", 25)
+    println("$name, $age years of age")
+
 }
