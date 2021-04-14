@@ -178,4 +178,7 @@ fun main(args: Array<String>)
     val (name, age) = Person28("Cristian", 25)
     println("$name, $age years of age")
 
+    val (name2, age2) = Person29("Space Resolution", 10)
+    println("$name2, $age2 years of age")
+    
 }

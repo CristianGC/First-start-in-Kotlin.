@@ -1011,6 +1011,7 @@ open class Person28: BasePerson
     }
 }
 
+data class Person29(var name: String, var age: Int)
 
 
 
