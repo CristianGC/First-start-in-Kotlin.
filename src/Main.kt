@@ -169,6 +169,10 @@ fun main(args: Array<String>)
     val obj9 = Person27("Cristian",25)
     obj9.caller(Person26())
 
+    val obj10 = Person28("Cristian",25)
 
+    val obj11 = obj10.copy(name = "Space Resolution", age = 30)
+    println("obj11 name: ${obj11.name}")
+    println("obj11 age: ${obj11.age}")
 
 }

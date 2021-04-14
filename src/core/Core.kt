@@ -700,8 +700,6 @@ class Person20
         println("\nweCheckIfTheWordLengthIsEvenOrOdd2: ")
         println(strings.filter(oddLength))
     }
-
-
 }
 
 class Person21
@@ -920,7 +918,7 @@ fun Person25.printlnAge()
     println(this.age)
 }
 
-class Person26
+final class Person26
 {
     init
     {
@@ -972,8 +970,36 @@ class Person27(private val name: String, private val age: Int)
     }
 }
 
+interface BasePerson
+{
+    var name: String
+    var age: Int
+}
 
+open class Person28: BasePerson
+{
+    init
+    {
+        println("Person28")
+    }
 
+    override var name: String = ""
+        get() = field
+        set(value) { field = value}
+
+    override var age: Int = 0
+        get() = field
+        set(value) { field = value }
+
+    constructor()
+    constructor(name: String, age: Int)
+    {
+        this.name = name
+        this.age = age
+    }
+
+    fun copy(name: String = this.name, age: Int = this.age) = Person28(name, age)
+}
 
 
 
