@@ -166,6 +166,7 @@ fun main(args: Array<String>)
         Person25("Cristiam",25).printlnAge()
     */
 
+
     val obj9 = Person27("Cristian",25)
     obj9.caller(Person26())
 
@@ -180,5 +181,11 @@ fun main(args: Array<String>)
 
     val (name2, age2) = Person29("Space Resolution", 10)
     println("$name2, $age2 years of age")
-    
+
+    val object12 = Age( 25)
+    val object13 = SumAge(object12,object12)
+
+    println("Age: ${checking(object12)}")
+    println("SumAge: ${checking(object13)}")
+    println("Person28 component2: ${checking(obj10)}")
 }
