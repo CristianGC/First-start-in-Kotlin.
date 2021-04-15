@@ -1014,19 +1014,38 @@ open class Person28: BasePerson, Person30
 data class Person29(var name: String, var age: Int)
 
 sealed class Person30
-data class Age(val number: Int) : Person30()
+data class Age0(val number: Int) : Person30()
 data class SumAge(val age1: Person30, val age2: Person30) : Person30()
 
 fun checking(obj: Person30): Int = when (obj)
 {
-    is Age -> obj.number
+    is Age0 -> obj.number
     is SumAge -> checking(obj.age1) + checking(obj.age2)
     is Person28 -> obj.component2()
     else -> 3
 }
 
+data class Name(var name: String)
+data class Age(var name: Int)
 
+//first class with typical parameters
+class Person31<N, A>(n: N, a: A)
+{
+    init
+    {
+        println("\nPerson31")
+    }
 
+    private var nameValue = n
+    private var ageValue = a
+
+    fun printlnNameAge()
+    {
+        println("nameValue: ${nameValue}")
+        println("ageValue: ${ageValue}")
+    }
+
+}
 
 
 

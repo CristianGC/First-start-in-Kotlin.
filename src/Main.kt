@@ -182,10 +182,24 @@ fun main(args: Array<String>)
     val (name2, age2) = Person29("Space Resolution", 10)
     println("$name2, $age2 years of age")
 
-    val object12 = Age( 25)
+    val object12 = Age0( 25)
     val object13 = SumAge(object12,object12)
 
     println("Age: ${checking(object12)}")
     println("SumAge: ${checking(object13)}")
     println("Person28 component2: ${checking(obj10)}")
+
+    val object14 = Person31<String, Int>("Cristian",25)
+    object14.printlnNameAge()
+
+    val object15 = Person31("Cristian",25)
+    object15.printlnNameAge()
+
+    val object16 = Person31<Name, Age>(Name("Cristian"), Age(25))
+    object16.printlnNameAge()
+
+    val object17 = Person31(Name("Cristian"), Age(25))
+    object17.printlnNameAge()
+
+
 }
