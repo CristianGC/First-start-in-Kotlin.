@@ -1,4 +1,6 @@
 import core.*
+import java.util.*
+
 
 fun main(args: Array<String>)
 {
@@ -201,5 +203,8 @@ fun main(args: Array<String>)
     val object17 = Person31(Name("Cristian"), Age(25))
     object17.printlnNameAge()
 
+    val object18 = Person32("Cristian", "25")
+    println(object18.name(object18.getType()))
+    println(object18.age(object18.getType()))
 
 }

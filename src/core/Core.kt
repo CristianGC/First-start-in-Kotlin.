@@ -1047,14 +1047,62 @@ class Person31<N, A>(n: N, a: A)
 
 }
 
+class PersonPrintln1
+{
+    fun printlnName(name: String): String
+    {
+        return "PersonPrintln1 Name: " + name
+    }
 
+    fun printlnAge(age: String): String
+    {
+        return "PersonPrintln1 Age: " + age
+    }
+}
 
+class PersonPrintln2
+{
+    fun printlnName(name: String): String
+    {
+        return "PersonPrintln2 Name: " + name
+    }
 
+    fun printlnAge(age: String): String
+    {
+        return "PersonPrintln2 Age: " + age
+    }
+}
 
+abstract class Person<out T, in V, out H>
+{
+    abstract fun name(obj: V): T
+    abstract fun age(obj: V): T
+    abstract fun getType(): H
+}
 
+class Person32(var name: String, var age: String): Person<String, PersonPrintln2, PersonPrintln2>()
+{
+    init
+    {
+        println("\nPerson32")
+    }
 
+    override fun name(obj: PersonPrintln2): String
+    {
+        return obj.printlnName(name)
+    }
 
+    override fun age(obj: PersonPrintln2): String
+    {
+        return obj.printlnAge(age)
+    }
 
+    override fun getType(): PersonPrintln2
+    {
+        return PersonPrintln2()
+    }
+
+}
 
 
 
