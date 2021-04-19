@@ -1104,12 +1104,88 @@ class Person32(var name: String, var age: String): Person<String, PersonPrintln2
 
 }
 
+class Person33<G, V>(private var name: String, private var age: Int)
+{
+    private fun name(obj: G): G
+    {
+        return obj
+    }
 
+    private fun age(obj: V): V
+    {
+        return obj
+    }
 
+    private fun name(obj1: G, obj2: V)
+    {
+        println("fun name(obj1: ${obj1}, obj2:  ${obj2})")
+    }
 
+    private fun age(obj1: G, obj2: V)
+    {
+        println("fun age(obj1:  ${obj1}, obj2:  ${obj2})")
+    }
 
+    // The function does not have to work but it does work.
+    fun test1(object19: Person33<in String, Int>)
+    {
+        println(object19.name("Cristian"))
+    }
 
+    // The function does not work
+    fun test2(object19: Person33<out String, Int>)
+    {
+        //println(object19.name("Cristian"))
+        //object19.name("Cristian",25)
+    }
 
+    // The function does not have to work but it does work.
+    fun test3(object19: Person33<String, in Int>)
+    {
+        object19.age(25)
+    }
+
+    // The function does not work
+    fun test4(object19: Person33<String, out Int>)
+    {
+        //object19.age(25)
+    }
+
+    // The function does not work
+    fun test5(object19: Person33<out String, out Int>)
+    {
+        //object19.name("Cristian")
+        //object19.age(25)
+        //object19.age("Cristian", 25)
+        //object19.name("Cristian", 25)
+    }
+
+    // The function does not have to work but it does work.
+
+    fun test6(object19: Person33<in String, in Int>)
+    {
+        object19.name("Cristian")
+        object19.age(25)
+        object19.age("Cristian", 25)
+        object19.name("Cristian", 25)
+    }
+}
+
+class Test<T>
+{
+    fun test(obj: T): T
+    {
+        return obj
+    }
+}
+
+class Test1
+{
+    fun test(obj: Test<in String>)
+    {
+        println("Test1: obj.test(): ${obj.test("Cristian")}")
+    }
+}
 
 
 

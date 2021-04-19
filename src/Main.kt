@@ -206,4 +206,17 @@ fun main(args: Array<String>)
     println(object18.name(object18.getType()))
     println(object18.age(object18.getType()))
 
+    val object19 = Person33<String, Int>("Cristian", 25)
+    object19.test1(object19)
+    object19.test2(object19)
+    object19.test3(object19)
+    object19.test4(object19)
+    object19.test5(object19)
+    object19.test6(object19)
+
+    val Test = Test<String>()
+
+    val Test1 = Test1()
+    Test1.test(Test)
+
 }
