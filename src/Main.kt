@@ -217,6 +217,8 @@ fun main(args: Array<String>)
     val Test = Test<String>()
 
     val Test1 = Test1()
-    Test1.test(Test)
+    Test1.test0(Test)
+    Test1.test1(Test)
+    Test1.test2(Test)
 
 }

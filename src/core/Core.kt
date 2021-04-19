@@ -1181,9 +1181,25 @@ class Test<T>
 
 class Test1
 {
-    fun test(obj: Test<in String>)
+    init
     {
-        println("Test1: obj.test(): ${obj.test("Cristian")}")
+        println("\nclass Test1")
+    }
+
+    fun test0(obj: Test<String>)
+    {
+        println("Test1: obj.test0(): ${obj.test("Cristian")}")
+    }
+
+    fun test1(obj: Test<in String>)
+    {
+        println("Test1: obj.test1(): ${obj.test("Cristian")}")
+    }
+
+    // The function does not work
+    fun test2(obj: Test<out String>)
+    {
+        //println("Test1: obj.test2(): ${obj.test("Cristian")}")
     }
 }
 
