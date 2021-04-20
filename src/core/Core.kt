@@ -1211,13 +1211,119 @@ class test(): Person_C<in String>
 */
 
 
+internal interface Source<T>
+{
+    fun nextT(): T
+    fun nextT1(): T
+    fun nextT2(): T
+    fun nextT3(): T
+    fun nextT4(): T
+    fun nextT5(): T
+}
+
+class tttt() : Source<Int>
+{
+    override fun nextT(): Int
+    {
+        TODO("Not yet implemented")
+    }
+
+    override fun nextT1(): Int
+    {
+        TODO("Not yet implemented")
+    }
+
+    override fun nextT2(): Int
+    {
+        TODO("Not yet implemented")
+    }
+
+    override fun nextT3(): Int
+    {
+        TODO("Not yet implemented")
+    }
+
+    override fun nextT4(): Int
+    {
+        TODO("Not yet implemented")
+    }
+
+    override fun nextT5(): Int
+    {
+        TODO("Not yet implemented")
+    }
+
+}
 
 
 
+//Abstractizarea
+abstract class A1
+{
+    abstract fun Test1(): String
+
+    // Această funcție face unele calcule, dar nu știm cum.
+    private fun Test2(): Int
+    {
+        return 0
+    }
+}
+
+class A2(): A1()
+{
+    override fun Test1(): String
+    {
+        TODO("Not yet implemented")
+    }
+
+}
 
 
 
+//Încapsularea
+class I1()
+{
+    lateinit private var obj: String
 
+    fun Test1()
+    {
+        obj = "00"
+    }
+
+    fun Test2(value: String)
+    {
+        obj += value
+    }
+}
+
+
+
+// Polimorfismul
+open class P1()
+{
+    open fun Test1(): String
+    {
+        return ""
+    }
+
+    open fun Test2(): String
+    {
+        return ""
+    }
+}
+
+class P2(): P1()
+{
+    override fun Test1(): String
+    {
+        return "Test1"
+    }
+
+    override fun Test2(): String
+    {
+        return "Test2"
+    }
+}
 
 
 
