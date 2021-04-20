@@ -445,14 +445,14 @@ abstract class Person13 private constructor()
 
 }
 
-interface Man
+interface _Man
 {
     val whatKindOfMan: String
     var spaceGalaxy: String
     fun printlnSpaceGalaxy(){}
 }
 
-open class Person14(name: String, age: Int, override val whatKindOfMan: String = "Good", final override var spaceGalaxy: String = "It hosts a Kotlin galaxy :)"): Man
+open class Person14(name: String, age: Int, override val whatKindOfMan: String = "Good", final override var spaceGalaxy: String = "It hosts a Kotlin galaxy :)"): _Man
 {
     private var myName: String
     private var myAge: Int
@@ -483,7 +483,7 @@ open class Person14(name: String, age: Int, override val whatKindOfMan: String =
     }
 }
 
-open class Person15(myName: String, myAge: Int) : Person14(myName, myAge), Man
+open class Person15(myName: String, myAge: Int) : Person14(myName, myAge), _Man
 {
     final override val myLevel: Int
         get() = super.myLevel + 3
@@ -1073,14 +1073,14 @@ class PersonPrintln2
     }
 }
 
-abstract class Person<out T, in V, out H>
+abstract class _Person<out T, in V, out H>
 {
     abstract fun name(obj: V): T
     abstract fun age(obj: V): T
     abstract fun getType(): H
 }
 
-class Person32(var name: String, var age: String): Person<String, PersonPrintln2, PersonPrintln2>()
+class Person32(var name: String, var age: String): _Person<String, PersonPrintln2, PersonPrintln2>()
 {
     init
     {
@@ -1310,6 +1310,11 @@ open class P1()
     {
         return ""
     }
+
+    open fun Test2(value: String)
+    {
+        println("value: ${value}")
+    }
 }
 
 class P2(): P1()
@@ -1321,12 +1326,150 @@ class P2(): P1()
 
     override fun Test2(): String
     {
+        super.Test2("super () Test2")
         return "Test2"
     }
 }
 
+/*
+    Principii de baza ale POO :
 
+    Abstractizarea:
+        1 Clase abstracte
+        2 Interfete
+    Incapsularea
+    Polimorfismul
+    Mostenirea:
+        1 Single
+        2 Multilevel
+        3 Hierarchical
+        4 Multiple
+        5 Hybrid
+*/
 
+interface Person
+{
+    fun myNameIs(): String
+    fun iAmYearsOld(): Int
+}
+
+abstract class Man(): Person
+{
+    protected var name: String = ""
+        get() = field
+        protected set(value) {field = value}
+    protected var age: Int = 0
+        get() = field
+        protected set(value) {field = value}
+
+    override fun myNameIs(): String
+    {
+        return name
+    }
+
+    protected fun myNameIs(value: String)
+    {
+        println("myNameIs: ${value}")
+    }
+
+    override fun iAmYearsOld(): Int
+    {
+        return age
+    }
+
+    protected fun iAmYearsOld(value: Int)
+    {
+        println("iAmYearsOld: ${value}")
+    }
+
+    abstract fun iWantToWork(): Boolean
+}
+
+abstract class Worker(): Man()
+{
+    protected var iWorkOrNot: Boolean = true
+    override fun iWantToWork(): Boolean
+    {
+        return iWorkOrNot
+    }
+
+    abstract fun okIKeepWorking()
+}
+
+abstract class DeveloperInKotlin(): Worker()
+{
+    override fun okIKeepWorking()
+    {
+        println("Da lucrez mai departe ca DeveloperInKotlin")
+    }
+}
+
+abstract class ProjectManager(): Worker()
+{
+    override fun okIKeepWorking()
+    {
+        println("Da lucrez mai departe ca ProjectManager")
+    }
+}
+
+open class Cristian(name: String, age: Int): DeveloperInKotlin()
+{
+    init
+    {
+        this.name = name
+        this.age = age
+
+        myNameIs(this.name)
+        iAmYearsOld(this.age)
+    }
+
+    override fun myNameIs(): String
+    {
+        return super.myNameIs() + " DeveloperInKotlin"
+    }
+}
+
+open class Cristina(name: String, age: Int): ProjectManager()
+{
+    init
+    {
+        this.name = name
+        this.age = age
+
+        myNameIs(this.name)
+        iAmYearsOld(this.age)
+    }
+
+    override fun myNameIs(): String
+    {
+        return super.myNameIs() + " ProjectManager"
+    }
+}
+
+class Workers()
+{
+    init
+    {
+        println("\nWorkers")
+
+        println("\nWorkers1")
+        val Worker1 = Cristian("Cristian", 25)
+        println("Worker1.myNameIs(): ${Worker1.myNameIs()}")
+        println("Worker1.iAmYearsOld(): ${Worker1.iAmYearsOld()}")
+        print("Worker1.okIKeepWorking(): ")
+        Worker1.okIKeepWorking()
+        println("Worker1.iWantToWork(): ${Worker1.iWantToWork()}")
+
+        println("\nWorkers2")
+        val Worker2 = Cristina("Cristina", 23)
+        println("Worker2.myNameIs(): ${Worker2.myNameIs()}")
+        println("Worker2.iAmYearsOld(): ${Worker2.iAmYearsOld()}")
+        print("Worker2.okIKeepWorking(): ")
+        Worker2.okIKeepWorking()
+        println("Worker2.iWantToWork(): ${Worker2.iWantToWork()}")
+
+    }
+}
 
 
 
