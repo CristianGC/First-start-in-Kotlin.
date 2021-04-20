@@ -214,11 +214,11 @@ fun main(args: Array<String>)
     object19.test5(object19)
     object19.test6(object19)
 
+
+
     val Test = Test<String>()
 
     val Test1 = Test1()
-    Test1.test0(Test)
-    Test1.test1(Test)
-    Test1.test2(Test)
+    println(Test1.test1(Test))
 
 }

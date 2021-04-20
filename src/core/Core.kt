@@ -1181,28 +1181,34 @@ class Test<T>
 
 class Test1
 {
-    init
+    fun test1(obj: Test<in String>): Any?
     {
-        println("\nclass Test1")
-    }
+        println("${obj.test("Cristian")}")
 
-    fun test0(obj: Test<String>)
-    {
-        println("Test1: obj.test0(): ${obj.test("Cristian")}")
-    }
+        if (obj.test("Cristian return") is String)
+        {
+            println("obj.test() Este String")
+        }
 
-    fun test1(obj: Test<in String>)
-    {
-        println("Test1: obj.test1(): ${obj.test("Cristian")}")
-    }
-
-    // The function does not work
-    fun test2(obj: Test<out String>)
-    {
-        //println("Test1: obj.test2(): ${obj.test("Cristian")}")
+        return obj.test("Cristian return")
     }
 }
 
+
+abstract class Person_C<T>
+{
+    abstract fun name(obj: T): T
+
+}
+/*
+class test(): Person_C<in String>
+{
+    override fun name(obj: String): Any?
+    {
+        return obj
+    }
+}
+*/
 
 
 
