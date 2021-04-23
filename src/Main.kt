@@ -225,8 +225,11 @@ fun main(args: Array<String>)
     Workers()
     */
 
-    println("\nCar1")
     val Car1 : Bus = Car(70.0f, "Space", "Bus-14384")
+    val Car2 : Sedan = Car(140.0f, "VM", "Sedan-57763")
+    val Car3 : Cabriolet = Car(200.0f, "STB", "Cabriolet-31374")
+
+    println("\nCar1")
     Car1.printlnBus()
     Car1.BurningTemperature = 40.0f
     Car1.dieselFuel = 170
@@ -235,7 +238,6 @@ fun main(args: Array<String>)
     Car1.StartingTheCar(true)
 
     println("\nCar2")
-    val Car2 : Sedan = Car(140.0f, "VM", "Sedan-57763")
     Car2.printlnSedan()
     Car2.BurningTemperature = 50.0f
     Car2.gasolineFuel = 70
@@ -244,7 +246,6 @@ fun main(args: Array<String>)
     Car2.StartingTheCar(true)
 
     println("\nCar3")
-    val Car3 : Cabriolet = Car(200.0f, "STB", "Cabriolet-31374")
     Car3.printlnCabriolet()
     Car3.removeTheRoofFromTheCar()
     Car3.BurningTemperature = 70.0f

@@ -1520,21 +1520,18 @@ abstract class Vehicle()
 {
     protected var maxSpeed = 0.0f
         get() = field
-        set(value) {field = setMaxSpeed(value, 200)}
-
-    private fun setMaxSpeed(value : Float, max : Int) : Float
-    {
-        if (value <= max)
+        set(value)
         {
-            println("setMaxSpeed")
+            if (value <= 200)
+            {
+                field = value
+                println("setMaxSpeed")
+            }
+            else
+            {
+                throw Exception("setMaxSpeed: Nu pot fi setate valori mai mari de 200")
+            }
         }
-        else
-        {
-            throw Exception("setMaxSpeed: Nu pot fi setate valori mai mari de ${max}")
-        }
-
-        return value
-    }
 
     protected var carBrand : String = ""
         get() = field
@@ -1557,7 +1554,7 @@ abstract class Vehicle()
 
         return value
     }
-
+    
     private fun fuelPumping()
     {
         println("\n 1: fuelPumping")
@@ -1609,21 +1606,18 @@ class Car(maxSpeed: Float, carBrand: String, carNumber: String) : Vehicle(), Bus
 
     override var dieselFuel: Int = 0
         get() = field
-        set(value) {field = setDieselFuel(value)}
-
-    fun setDieselFuel(value: Int): Int
-    {
-        if (value <= 200)
+        set(value)
         {
-            println("setDieselFuel")
+            if (value <= 200)
+            {
+                field = value
+                println("setDieselFuel")
+            }
+            else
+            {
+                throw Exception("dieselFuel: Nu pot fi setate valori mai mari de 200")
+            }
         }
-        else
-        {
-            throw Exception("dieselFuel: Nu pot fi setate valori mai mari de 200")
-        }
-
-        return value
-    }
 
     override fun printlnSedan()
     {
@@ -1642,39 +1636,34 @@ class Car(maxSpeed: Float, carBrand: String, carNumber: String) : Vehicle(), Bus
 
     override var gasolineFuel: Int = 0
         get() = field
-        set(value) {field = setGasolineFuel(value)}
-
-    fun setGasolineFuel(value: Int): Int
-    {
-        if (value < 100)
+        set(value)
         {
-            println("setGasolineFuel")
-        }
-        else
-        {
-            throw Exception("gasolineFuel: Nu pot fi setate valori mai mari de 100")
-        }
+            if (value < 100)
+            {
+                field = value
+                println("setGasolineFuel")
+            }
+            else
+            {
+                throw Exception("gasolineFuel: Nu pot fi setate valori mai mari de 100")
+            }
 
-        return value
-    }
+        }
 
     override var BurningTemperature: Float = 0.0f
         get() = field
-        set(value) {field = setBurningTemperature(value)}
-
-    fun setBurningTemperature(value: Float): Float
-    {
-        if (value < 90)
+        set(value)
         {
-            println("setBurningTemperature")
+            if (value < 90)
+            {
+                field = value
+                println("setBurningTemperature")
+            }
+            else
+            {
+                throw Exception("BurningTemperature: Nu pot fi setate valori mai mari de 90")
+            }
         }
-        else
-        {
-            throw Exception("BurningTemperature: Nu pot fi setate valori mai mari de 90")
-        }
-
-        return value
-    }
 
     override fun StartingTheCar()
     {
@@ -1695,3 +1684,10 @@ class Car(maxSpeed: Float, carBrand: String, carNumber: String) : Vehicle(), Bus
         }
     }
 }
+
+/*
+    SOLID
+    DRY
+    KISS
+*/
+
