@@ -24,8 +24,8 @@ interface GasolineFuel : BurningTemperature
 
 interface StartingTheCar
 {
-	fun StartingTheCar()
-	fun StartingTheCar(stop : Boolean)
+	fun startingTheCar()
+	fun startingTheCar(stop : Boolean)
 }
 
 interface Bus : DieselFuel, StartingTheCar
@@ -44,10 +44,9 @@ interface Cabriolet : GasolineFuel, StartingTheCar
 	fun removeTheRoofFromTheCar()
 }
 
-abstract class Vehicle()
+abstract class Vehicle
 {
 	protected var maxSpeed = 0.0f
-		get() = field
 		set(value)
 		{
 			if (value <= 200)
@@ -61,27 +60,25 @@ abstract class Vehicle()
 			}
 		}
 	protected var carBrand : String = ""
-		get() = field
 		set(value)
 		{
-			field = setMaximumNumberOf_Characters(value, 10)
+			field = setMaximumNumberOfCharacters(value, 10)
 		}
 	protected var carNumber : String = ""
-		get() = field
 		set(value)
 		{
-			field = setMaximumNumberOf_Characters(value, 20)
+			field = setMaximumNumberOfCharacters(value, 20)
 		}
 	
-	private fun setMaximumNumberOf_Characters(value : String, max : Int) : String
+	private fun setMaximumNumberOfCharacters(value : String, max : Int) : String
 	{
 		if (value.length < max)
 		{
-			println("setMaximumNumberOf_Characters")
+			println("setMaximumNumberOf Characters")
 		}
 		else
 		{
-			throw Exception("setMaximumNumberOf_Characters: Nu pot fi setate valori mai mari de ${max}")
+			throw Exception("setMaximumNumberOf_Characters: Nu pot fi setate valori mai mari de $max")
 		}
 		
 		return value
@@ -110,7 +107,7 @@ abstract class Vehicle()
 		println(" 4: startingTheEngine")
 	}
 	
-	open fun StartingTheCar()
+	open fun startingTheCar()
 	{
 		startingTheEngine()
 		println(" 5: StartingTheCar")
@@ -126,9 +123,9 @@ class Car(maxSpeed : Float, carBrand : String, carNumber : String) : Vehicle(), 
 		this.carBrand = carBrand
 		this.carNumber = carNumber
 		
-		println("maxSpeed: ${maxSpeed}")
-		println("carBrand: ${carBrand}")
-		println("carNumber: ${carNumber}")
+		println("maxSpeed: $maxSpeed")
+		println("carBrand: $carBrand")
+		println("carNumber: $carNumber")
 	}
 	
 	override fun printlnBus()
@@ -137,7 +134,6 @@ class Car(maxSpeed : Float, carBrand : String, carNumber : String) : Vehicle(), 
 	}
 	
 	override var dieselFuel : Int = 0
-		get() = field
 		set(value)
 		{
 			if (value <= 200)
@@ -167,7 +163,6 @@ class Car(maxSpeed : Float, carBrand : String, carNumber : String) : Vehicle(), 
 	}
 	
 	override var gasolineFuel : Int = 0
-		get() = field
 		set(value)
 		{
 			if (value < 100)
@@ -182,7 +177,6 @@ class Car(maxSpeed : Float, carBrand : String, carNumber : String) : Vehicle(), 
 			
 		}
 	override var burningTemperature : Float = 0.0f
-		get() = field
 		set(value)
 		{
 			if (value < 90)
@@ -196,21 +190,21 @@ class Car(maxSpeed : Float, carBrand : String, carNumber : String) : Vehicle(), 
 			}
 		}
 	
-	override fun StartingTheCar()
+	override fun startingTheCar()
 	{
-		super.StartingTheCar()
+		super.startingTheCar()
 		println("Mașina a fost creată de ură.")
 	}
 	
-	override fun StartingTheCar(stop : Boolean)
+	override fun startingTheCar(stop : Boolean)
 	{
-		if (stop == false)
+		if (stop)
 		{
 			println("Din anumite motive, a refuzat să pornească mașina.")
 		}
 		else
 		{
-			super.StartingTheCar()
+			super.startingTheCar()
 			println("Mașina a fost creată de ură.")
 		}
 	}
