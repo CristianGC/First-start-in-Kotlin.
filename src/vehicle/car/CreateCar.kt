@@ -5,190 +5,336 @@ import vehicle.car.`body type`.BodyType
 
 abstract class CreateCar
 {
-	init
-	{
-		println("\nCreateCar: ")
-	}
-	
 	abstract class SelectTheBrand
 	{
-		abstract class BrandGhinea() : BrandList.Ghinea()
+		abstract class BrandGhinea
 		{
 			abstract class SelectTheBodyType
 			{
-				open class Van() : BodyType.Van()
-				{}
+				open class BodyVan() : BodyType.Van(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyVan")
+					}
+					
+				}
 				
-				open class StationWagon() : BodyType.StationWagon()
-				{}
+				open class BodyStationWagon() : BodyType.StationWagon(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyStationWagon")
+					}
+				}
 				
-				open class Minivan() : BodyType.Minivan()
-				{}
+				open class BodyMinivan() : BodyType.Minivan(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyMinivan")
+					}
+				}
 				
-				open class Roadster() : BodyType.Roadster()
-				{}
+				open class BodyRoadster() : BodyType.Roadster(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyRoadster")
+					}
+				}
 				
-				open class SUV() : BodyType.SUV()
-				{}
+				open class BodySUV() : BodyType.SUV(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodySUV")
+					}
+				}
 				
-				open class Cabriolet() : BodyType.Cabriolet()
-				{}
+				open class BodyCabriolet() : BodyType.Cabriolet(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyCabriolet")
+					}
+				}
 				
-				open class Microvan() : BodyType.Microvan()
-				{}
+				open class BodyMicrovan() : BodyType.Microvan(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyMicrovan")
+					}
+				}
 				
-				open class Pickup() : BodyType.Pickup()
-				{}
+				open class BodyPickup() : BodyType.Pickup(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyPickup")
+					}
+				}
 				
-				open class Coupe() : BodyType.Coupe()
-				{}
+				open class BodyCoupe() : BodyType.Coupe(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyCoupe")
+					}
+				}
 				
-				open class Sedan() : BodyType.Sedan()
-				{}
+				open class BodySedan() : BodyType.Sedan(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodySedan")
+					}
+				}
 				
-				open class Crossover() : BodyType.Crossover()
-				{}
+				open class BodyCrossover() : BodyType.Crossover(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyCrossover")
+					}
+				}
 				
-				open class Combi() : BodyType.Combi()
-				{}
+				open class BodyCombi() : BodyType.Combi(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyCombi")
+					}
+				}
 				
-				open class Hatchback() : BodyType.Hatchback()
-				{}
+				open class BodyHatchback() : BodyType.Hatchback(), BrandList.Ghinea
+				{
+					init
+					{
+						println("\nCreateCar: BrandGhinea BodyHatchback")
+					}
+				}
 			}
 		}
 		
-		abstract class BrandJoli : BrandList.Joli()
+		abstract class BrandJoli
 		{
 			abstract class SelectTheBodyType
 			{
-				open class Van() : BodyType.Van()
-				{}
+				open class BodyVan() : BodyType.Van(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyVan")
+					}
+				}
 				
-				open class StationWagon() : BodyType.StationWagon()
-				{}
+				open class BodyStationWagon() : BodyType.StationWagon(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyStationWagon")
+					}
+				}
 				
-				open class Minivan() : BodyType.Minivan()
-				{}
+				open class BodyMinivan() : BodyType.Minivan(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyMinivan")
+					}
+				}
 				
-				open class Roadster() : BodyType.Roadster()
-				{}
+				open class BodyRoadster() : BodyType.Roadster(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyRoadster")
+					}
+				}
 				
-				open class SUV() : BodyType.SUV()
-				{}
+				open class BodySUV() : BodyType.SUV(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodySUV")
+					}
+				}
 				
-				open class Cabriolet() : BodyType.Cabriolet()
-				{}
+				open class BodyCabriolet() : BodyType.Cabriolet(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyCabriolet")
+					}
+				}
 				
-				open class Microvan() : BodyType.Microvan()
-				{}
+				open class BodyMicrovan() : BodyType.Microvan(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyMicrovan")
+					}
+				}
 				
-				open class Pickup() : BodyType.Pickup()
-				{}
+				open class BodyPickup() : BodyType.Pickup(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyPickup")
+					}
+				}
 				
-				open class Coupe() : BodyType.Coupe()
-				{}
+				open class BodyCoupe() : BodyType.Coupe(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyCoupe")
+					}
+				}
 				
-				open class Sedan() : BodyType.Sedan()
-				{}
+				open class BodySedan() : BodyType.Sedan(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodySedan")
+					}
+				}
 				
-				open class Crossover() : BodyType.Crossover()
-				{}
+				open class BodyCrossover() : BodyType.Crossover(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyCrossover")
+					}
+				}
 				
-				open class Combi() : BodyType.Combi()
-				{}
+				open class BodyCombi() : BodyType.Combi(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyCombi")
+					}
+				}
 				
-				open class Hatchback() : BodyType.Hatchback()
-				{}
+				open class BodyHatchback() : BodyType.Hatchback(), BrandList.Joli
+				{
+					init
+					{
+						println("\nCreateCar: BrandJoli BodyHatchback")
+					}
+				}
 			}
 		}
 		
-		abstract class BrandCami :  BrandList.Cami()
+		abstract class BrandCami
 		{
 			abstract class SelectTheBodyType
 			{
-				open class Van() : BodyType.Van()
-				{}
+				open class BodyVan() : BodyType.Van(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyVan")
+					}
+				}
 				
-				open class StationWagon() : BodyType.StationWagon()
-				{}
+				open class BodyStationWagon() : BodyType.StationWagon(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyStationWagon")
+					}
+				}
 				
-				open class Minivan() : BodyType.Minivan()
-				{}
+				open class BodyMinivan() : BodyType.Minivan(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyMinivan")
+					}
+				}
 				
-				open class Roadster() : BodyType.Roadster()
-				{}
+				open class BodyRoadster() : BodyType.Roadster(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyRoadster")
+					}
+				}
 				
-				open class SUV() : BodyType.SUV()
-				{}
+				open class BodySUV() : BodyType.SUV(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodySUV")
+					}
+				}
 				
-				open class Cabriolet() : BodyType.Cabriolet()
-				{}
+				open class BodyCabriolet() : BodyType.Cabriolet(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyCabriolet")
+					}
+				}
 				
-				open class Microvan() : BodyType.Microvan()
-				{}
+				open class BodyMicrovan() : BodyType.Microvan(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyMicrovan")
+					}
+				}
 				
-				open class Pickup() : BodyType.Pickup()
-				{}
+				open class BodyPickup() : BodyType.Pickup(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyPickup")
+					}
+				}
 				
-				open class Coupe() : BodyType.Coupe()
-				{}
+				open class BodyCoupe() : BodyType.Coupe(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyCoupe")
+					}
+				}
 				
-				open class Sedan() : BodyType.Sedan()
-				{}
+				open class BodySedan() : BodyType.Sedan(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodySedan")
+					}
+				}
 				
-				open class Crossover() : BodyType.Crossover()
-				{}
+				open class BodyCrossover() : BodyType.Crossover(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyCrossover")
+					}
+				}
 				
-				open class Combi() : BodyType.Combi()
-				{}
+				open class BodyCombi() : BodyType.Combi(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyCombi")
+					}
+				}
 				
-				open class Hatchback() : BodyType.Hatchback()
-				{}
-			}
-		}
-		
-		abstract class BrandOli :  BrandList.Oli()
-		{
-			abstract class SelectTheBodyType
-			{
-				open class BodyVan() : BodyType.Van()
-				{}
-				
-				open class BodyStationWagon() : BodyType.StationWagon()
-				{}
-				
-				open class BodyMinivan() : BodyType.Minivan()
-				{}
-				
-				open class BodyRoadster() : BodyType.Roadster()
-				{}
-				
-				open class BodySUV() : BodyType.SUV()
-				{}
-				
-				open class BodyCabriolet() : BodyType.Cabriolet()
-				{}
-				
-				open class BodyMicrovan() : BodyType.Microvan()
-				{}
-				
-				open class BodyPickup() : BodyType.Pickup()
-				{}
-				
-				open class BodyCoupe() : BodyType.Coupe()
-				{}
-				
-				open class BodySedan() : BodyType.Sedan()
-				{}
-				
-				open class BodyCrossover() : BodyType.Crossover()
-				{}
-				
-				open class BodyCombi() : BodyType.Combi()
-				{}
-				
-				open class BodyHatchback() : BodyType.Hatchback()
-				{}
+				open class BodyHatchback() : BodyType.Hatchback(), BrandList.Cami
+				{
+					init
+					{
+						println("\nCreateCar: BrandCami BodyHatchback")
+					}
+				}
 			}
 		}
 	}

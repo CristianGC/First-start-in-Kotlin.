@@ -1,69 +1,82 @@
 package vehicle.car.`body type`
 
-interface BodyType
+abstract class BodyType
 {
 	open class Van()
 	{
-		val nama = "Van"
+		val bodyName : String
+			get() = "Van"
 	}
 	
 	open class StationWagon()
 	{
-		val nama = "Station wagon"
+		val bodyName : String
+			get() = "StationWagon"
 	}
 	
 	open class Minivan()
 	{
-		val nama = "Minivan"
+		val bodyName : String
+			get() = "Minivan"
 	}
 	
 	open class Roadster()
 	{
-		val nama = "Roadster"
+		val bodyName : String
+			get() = "Roadster"
 	}
 	
 	open class SUV()
 	{
-		val nama = "SUV"
+		val bodyName : String
+			get() = "SUV"
 	}
 	
 	open class Cabriolet()
 	{
-		val nama = "Cabriolet"
+		val bodyName : String
+			get() = "Cabriolet"
 	}
 	
 	open class Microvan()
 	{
-		val nama = "Microvan"
+		val bodyName : String
+			get() = "Microvan"
 	}
 	
 	open class Pickup()
 	{
-		val nama = "Pickup"
+		val bodyName : String
+			get() = "Pickup"
 	}
 	
 	open class Coupe()
 	{
-		val nama = "Coupe"
+		val bodyName : String
+			get() = "Coupe"
 	}
 	
 	open class Sedan()
 	{
-		val nama = "Sedan"
+		val bodyName : String
+			get() = "Sedan"
 	}
 	
 	open class Crossover()
 	{
-		val nama = "Crossover"
+		val bodyName : String
+			get() = "Crossover"
 	}
 	
 	open class Combi()
 	{
-		val nama = "Combi"
+		val bodyName : String
+			get() = "Combi"
 	}
 	
 	open class Hatchback()
 	{
-		val nama = "Hatchback"
+		val bodyName : String
+			get() = "Hatchback"
 	}
 }

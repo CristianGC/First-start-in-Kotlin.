@@ -2,15 +2,21 @@ package vehicle.brands
 
 abstract class BrandList
 {
-	abstract class Ghinea() : Brand.Ghinea()
-	{}
+	interface Ghinea : Brand
+	{
+		override val brandName : String
+			get() = "Ghinea"
+	}
 	
-	abstract class Joli() : Brand.Joli()
-	{}
+	interface Joli : Brand
+	{
+		override val brandName : String
+			get() = "Joli"
+	}
 	
-	abstract class Cami() : Brand.Cami()
-	{}
-	
-	abstract class Oli() : Brand.Oli()
-	{}
+	interface Cami : Brand
+	{
+		override val brandName : String
+			get() = "Cami"
+	}
 }
