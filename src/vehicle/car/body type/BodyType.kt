@@ -1,80 +1,82 @@
 package vehicle.car.`body type`
 
-abstract class BodyType
+import vehicle.car.Car
+
+abstract class BodyTypeList
 {
-	open class Van()
+	open class BodyVan() : Car()
 	{
 		val bodyName : String
 			get() = "Van"
 	}
 	
-	open class StationWagon()
+	open class BodyStationWagon() : Car()
 	{
 		val bodyName : String
 			get() = "StationWagon"
 	}
 	
-	open class Minivan()
+	open class BodyMinivan() : Car()
 	{
 		val bodyName : String
 			get() = "Minivan"
 	}
 	
-	open class Roadster()
+	open class BodyRoadster() : Car()
 	{
 		val bodyName : String
 			get() = "Roadster"
 	}
 	
-	open class SUV()
+	open class BodySUV() : Car()
 	{
 		val bodyName : String
 			get() = "SUV"
 	}
 	
-	open class Cabriolet()
+	open class BodyCabriolet() : Car()
 	{
 		val bodyName : String
 			get() = "Cabriolet"
 	}
 	
-	open class Microvan()
+	open class BodyMicrovan() : Car()
 	{
 		val bodyName : String
 			get() = "Microvan"
 	}
 	
-	open class Pickup()
+	open class BodyPickup() : Car()
 	{
 		val bodyName : String
 			get() = "Pickup"
 	}
 	
-	open class Coupe()
+	open class BodyCoupe() : Car()
 	{
 		val bodyName : String
 			get() = "Coupe"
 	}
 	
-	open class Sedan()
+	open class BodySedan() : Car()
 	{
 		val bodyName : String
 			get() = "Sedan"
 	}
 	
-	open class Crossover()
+	open class BodyCrossover() : Car()
 	{
 		val bodyName : String
 			get() = "Crossover"
 	}
 	
-	open class Combi()
+	open class BodyCombi() : Car()
 	{
 		val bodyName : String
 			get() = "Combi"
 	}
 	
-	open class Hatchback()
+	open class BodyHatchback() : Car()
 	{
 		val bodyName : String
 			get() = "Hatchback"
