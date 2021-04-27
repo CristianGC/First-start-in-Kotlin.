@@ -1,7 +1,6 @@
 package vehicle.car
 
 import vehicle.brands.BrandList
-import vehicle.car.`body type`.BodyTypeList
 
 abstract class CreateCar
 {
@@ -15,8 +14,20 @@ abstract class CreateCar
 				{
 					abstract class Model
 					{
-						open class ThereAreNoModels()
-						{}
+						open class G3V() : CarTest.BodyTypeList.BodyVan(BrandList.Ghinea())
+						{
+							final override val maxSpeedKmH : Float = 70.0f
+						}
+						
+						open class G5V() : CarTest.BodyTypeList.BodyVan(BrandList.Ghinea())
+						{
+							final override val maxSpeedKmH : Float = 140.0f
+						}
+						
+						open class G7V() : CarTest.BodyTypeList.BodyVan(BrandList.Ghinea())
+						{
+							final override val maxSpeedKmH : Float = 200.0f
+						}
 					}
 				}
 				
@@ -78,29 +89,8 @@ abstract class CreateCar
 				{
 					abstract class Model
 					{
-						open class G3P() : BodyTypeList.BodyNamePickup(), BrandList.Ghinea
-						{
-							final override val maxSpeedKmH : Float = 70.0f
-							final override fun printlnBrand()
-							{
-								super.printlnBrand()
-							}
-							
-							final override fun printlnBody()
-							{
-								super.printlnBody()
-							}
-						}
-						
-						open class G5P() : BodyTypeList.BodyNamePickup(), BrandList.Ghinea
-						{
-							final override val maxSpeedKmH : Float = 140.0f
-						}
-						
-						open class G7P() : BodyTypeList.BodyNamePickup(), BrandList.Ghinea
-						{
-							final override val maxSpeedKmH : Float = 200.0f
-						}
+						open class ThereAreNoModels()
+						{}
 					}
 				}
 				
@@ -222,13 +212,7 @@ abstract class CreateCar
 				{
 					abstract class Model
 					{
-						open class J3P() : BrandList.Joli, BodyTypeList.BodyNamePickup()
-						{}
-						
-						open class J5P() : BrandList.Joli, BodyTypeList.BodyNamePickup()
-						{}
-						
-						open class J7P() : BrandList.Joli, BodyTypeList.BodyNamePickup()
+						open class ThereAreNoModels()
 						{}
 					}
 				}
@@ -351,13 +335,7 @@ abstract class CreateCar
 				{
 					abstract class Model
 					{
-						open class C3P() : BrandList.Cami, BodyTypeList.BodyNamePickup()
-						{}
-						
-						open class C5P() : BrandList.Cami, BodyTypeList.BodyNamePickup()
-						{}
-						
-						open class C7P() : BrandList.Cami, BodyTypeList.BodyNamePickup()
+						open class ThereAreNoModels()
 						{}
 					}
 				}
