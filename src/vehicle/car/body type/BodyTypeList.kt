@@ -2,31 +2,14 @@ package vehicle.car.`body type`
 
 import vehicle.brands.Brand
 import vehicle.brands.BrandName
-import vehicle.brands.PrintlnBrandName
 import vehicle.car.Car
 
 abstract class BodyTypeList
 {
-	open class BodyVan(final override val brandName : BrandName) : Car(), Body, Brand
+	open class BodyVan(private val valueBrandName : BrandName) : Car(), Body, Brand
 	{
-		init
-		{
-			if (brandName is Brand)
-			{
-				println("\nbrandName: ${brandName} is Brand")
-			}
-			
-			if (brandName is BrandName)
-			{
-				println("\nbrandName: ${brandName} is BrandName")
-			}
-			
-			if (brandName is PrintlnBrandName)
-			{
-				println("\nbrandName: ${brandName} is PrintlnBrandName")
-			}
-		}
-		
+		final override val brandName : String
+			get() = valueBrandName.brandName.toString()
 		final override val bodyName : String
 			get() = "Van"
 		

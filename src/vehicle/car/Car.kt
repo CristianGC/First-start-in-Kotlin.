@@ -20,10 +20,12 @@ abstract class CarTest
 {
 	abstract class BodyTypeList
 	{
-		open class BodyVan(final override val brandName : BrandName) : Car(), Body, Brand
+		open class BodyVan(private val valueBrandName : BrandName) : Car(), Body, Brand
 		{
 			final override val bodyName : String
 				get() = "Van"
+			final override val brandName : String
+				get() = valueBrandName.brandName.toString()
 			
 			final override fun printlnBody()
 			{
