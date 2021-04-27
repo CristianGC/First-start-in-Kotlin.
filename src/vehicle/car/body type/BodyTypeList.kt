@@ -4,81 +4,81 @@ import vehicle.car.Car
 
 abstract class BodyTypeList
 {
-	open class BodyVan() : Car()
+	open class BodyNameVan() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Van"
 	}
 	
-	open class BodyStationWagon() : Car()
+	open class BodyNameStationWagon() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "StationWagon"
 	}
 	
-	open class BodyMinivan() : Car()
+	open class BodyNameMinivan() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Minivan"
 	}
 	
-	open class BodyRoadster() : Car()
+	open class BodyNameRoadster() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Roadster"
 	}
 	
-	open class BodySUV() : Car()
+	open class BodyNameSUV() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "SUV"
 	}
 	
-	open class BodyCabriolet() : Car()
+	open class BodyNameCabriolet() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Cabriolet"
 	}
 	
-	open class BodyMicrovan() : Car()
+	open class BodyNameMicrovan() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Microvan"
 	}
 	
-	open class BodyPickup() : Car()
+	open class BodyNamePickup() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Pickup"
 	}
 	
-	open class BodyCoupe() : Car()
+	open class BodyNameCoupe() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Coupe"
 	}
 	
-	open class BodySedan() : Car()
+	open class BodyNameSedan() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Sedan"
 	}
 	
-	open class BodyCrossover() : Car()
+	open class BodyNameCrossover() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Crossover"
 	}
 	
-	open class BodyCombi() : Car()
+	open class BodyNameCombi() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Combi"
 	}
 	
-	open class BodyHatchback() : Car()
+	open class BodyNameHatchback() : Car(), Body
 	{
-		val bodyName : String
+		final override val bodyName : String
 			get() = "Hatchback"
 	}
 }
