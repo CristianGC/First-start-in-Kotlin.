@@ -14,17 +14,17 @@ abstract class CreateCar
 				{
 					abstract class Model
 					{
-						open class G3V() : CarTest.BodyTypeList.BodyVan(BrandList.Ghinea())
+						open class G3V() : WeSelectTheTypeofCar.BodyTypeList.BodyVan(BrandList.Ghinea())
 						{
 							final override val maxSpeedKmH : Float = 70.0f
 						}
 						
-						open class G5V() : CarTest.BodyTypeList.BodyVan(BrandList.Ghinea())
+						open class G5V() : WeSelectTheTypeofCar.BodyTypeList.BodyVan(BrandList.Ghinea())
 						{
 							final override val maxSpeedKmH : Float = 140.0f
 						}
 						
-						open class G7V() : CarTest.BodyTypeList.BodyVan(BrandList.Ghinea())
+						open class G7V() : WeSelectTheTypeofCar.BodyTypeList.BodyVan(BrandList.Ghinea())
 						{
 							final override val maxSpeedKmH : Float = 200.0f
 						}
