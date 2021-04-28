@@ -1,6 +1,6 @@
 package vehicle
 
-interface GasolineFuel : BurningTemperature
+interface GasolineFuel
 {
 	var gasolineFuel : Int
 }

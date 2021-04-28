@@ -1,6 +1,6 @@
 package vehicle
 
-interface DieselFuel : BurningTemperature
+interface DieselFuel
 {
 	var dieselFuel : Int
 }
