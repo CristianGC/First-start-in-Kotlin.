@@ -1,9 +1,9 @@
-package solid
+package principles.solid
 
-class Painter(override var name : String) : Worker(),  Name, PrintName
+class Chef(override var name : String) : Worker(),  Name, PrintName
 {
 	final override val theNameofTheSpecialty : String
-		get() = "Painter"
+		get() = "Chef"
 	
 	final override fun printName()
 	{

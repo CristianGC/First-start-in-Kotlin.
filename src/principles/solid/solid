@@ -12,3 +12,5 @@ O - Principiul deschiderii / închiderii
 L - Principiul de înlocuire Liskov
 I - Principiul de separare a interfeței
 D - Inversia dependenței
+
+https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design-ru#single-responsibility-principle

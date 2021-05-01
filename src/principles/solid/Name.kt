@@ -1,4 +1,4 @@
-package solid
+package principles.solid
 
 interface Name
 {

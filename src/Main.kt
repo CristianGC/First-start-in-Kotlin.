@@ -1,6 +1,4 @@
-import solid.*
-import vehicle.car.CreateCar
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
+import principles.solid.*
 
 fun main()
 {
@@ -15,12 +13,9 @@ fun main()
 	val car7 = CreateCar.SelectTheBrand.BrandGhinea.SelectTheBodyType.BodyVan.Model.G7V()
 	car7.printlnBody()
 	 */
-	
-
-	var allWorker : Array<Worker> = arrayOf(Chef("Kalia"),Driver("Gali"),Gardener("Filana"),Painter("Inapia"))
+	val allWorker : Array<Worker> = arrayOf(Chef("Kalia"), Driver("Gali"), Gardener("Filana"), Painter("Inapia"))
 	printalAllNameSpeciality(allWorker)
-	
-	var printAllName = PrintAllName(Chef("Kalia"))
+	val printAllName = PrintAllName(Chef("Kalia"))
 	printAllName.printlnName()
 	
 }

@@ -1,4 +1,4 @@
-package solid
+package principles.solid
 
 abstract class Worker
 {

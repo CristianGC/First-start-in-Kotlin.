@@ -1,4 +1,4 @@
-package solid
+package principles.solid
 
 class PrintAllName(var name : Name)
 {

@@ -1,9 +1,9 @@
-package solid
+package principles.solid
 
-class Driver(override var name : String) : Worker(), Name, PrintName
+class Painter(override var name : String) : Worker(),  Name, PrintName
 {
 	final override val theNameofTheSpecialty : String
-		get() = "Driver"
+		get() = "Painter"
 	
 	final override fun printName()
 	{
