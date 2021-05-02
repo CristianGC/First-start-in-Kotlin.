@@ -1,6 +1,6 @@
 package vehicle.brands
 
-interface PrintlnBrandName : BrandName
+interface IPrintlnBrandName : IBrandName
 {
 	fun printlnBrand()
 	{

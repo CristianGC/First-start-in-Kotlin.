@@ -1,6 +1,6 @@
 package principles.solid
 
-abstract class Worker
+abstract class AWorker
 {
 	abstract val theNameofTheSpecialty : String
 	

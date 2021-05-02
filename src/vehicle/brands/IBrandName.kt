@@ -1,6 +1,6 @@
 package vehicle.brands
 
-interface BrandName
+interface IBrandName
 {
 	val brandName : Any
 }

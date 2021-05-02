@@ -1,6 +1,6 @@
 package vehicle.car.`body type`
 
-abstract class BodyTypeList
+abstract class ABodyTypeList
 {
 	abstract class BodyVan()
 	{

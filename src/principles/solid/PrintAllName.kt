@@ -1,6 +1,6 @@
 package principles.solid
 
-class PrintAllName(var name : Name)
+class PrintAllName(var name : IName)
 {
 	fun printlnName()
 	{

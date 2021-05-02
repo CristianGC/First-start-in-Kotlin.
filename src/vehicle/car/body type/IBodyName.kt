@@ -1,6 +1,6 @@
 package vehicle.car.`body type`
 
-interface BodyName
+interface IBodyName
 {
 	val bodyName : String
 }

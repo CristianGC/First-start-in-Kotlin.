@@ -1,6 +1,6 @@
 package vehicle.car.`body type`
 
-interface PrintlnBodyName : BodyName
+interface IPrintlnBodyName : IBodyName
 {
 	fun printlnBody()
 	{

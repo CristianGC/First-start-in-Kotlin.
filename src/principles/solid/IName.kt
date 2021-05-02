@@ -1,6 +1,6 @@
 package principles.solid
 
-interface Name
+interface IName
 {
 	var name : String
 }

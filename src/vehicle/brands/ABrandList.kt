@@ -1,20 +1,20 @@
 package vehicle.brands
 
-abstract class BrandList
+abstract class ABrandList
 {
-	class Ghinea : BrandName
+	class Ghinea : IBrandName
 	{
 		final override val brandName : String
 			get() = "Ghinea"
 	}
 	
-	class Joli : BrandName
+	class Joli : IBrandName
 	{
 		override val brandName : String
 			get() = "Joli"
 	}
 	
-	class Cami : BrandName
+	class Cami : IBrandName
 	{
 		override val brandName : String
 			get() = "Cami"

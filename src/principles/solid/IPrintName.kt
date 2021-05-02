@@ -1,6 +1,6 @@
 package principles.solid
 
-interface PrintName
+interface IPrintName
 {
 	fun printName()
 }

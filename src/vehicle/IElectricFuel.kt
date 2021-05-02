@@ -1,6 +1,6 @@
 package vehicle
 
-interface ElectricFuel
+interface IElectricFuel
 {
 	var electricFuel : Int
 }

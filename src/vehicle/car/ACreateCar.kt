@@ -1,8 +1,8 @@
 package vehicle.car
 
-import vehicle.brands.BrandList
+import vehicle.brands.ABrandList
 
-abstract class CreateCar
+abstract class ACreateCar
 {
 	abstract class SelectTheBrand
 	{
@@ -14,17 +14,17 @@ abstract class CreateCar
 				{
 					abstract class Model
 					{
-						open class G3V() : WeSelectTheTypeofCar.BodyTypeList.BodyVan(BrandList.Ghinea())
+						open class G3V() : AWeSelectTheTypeofCar.BodyTypeList.BodyVan(ABrandList.Ghinea())
 						{
 							final override val maxSpeedKmH : Float = 70.0f
 						}
 						
-						open class G5V() : WeSelectTheTypeofCar.BodyTypeList.BodyVan(BrandList.Ghinea())
+						open class G5V() : AWeSelectTheTypeofCar.BodyTypeList.BodyVan(ABrandList.Ghinea())
 						{
 							final override val maxSpeedKmH : Float = 140.0f
 						}
 						
-						open class G7V() : WeSelectTheTypeofCar.BodyTypeList.BodyVan(BrandList.Ghinea())
+						open class G7V() : AWeSelectTheTypeofCar.BodyTypeList.BodyVan(ABrandList.Ghinea())
 						{
 							final override val maxSpeedKmH : Float = 200.0f
 						}

@@ -1,11 +1,11 @@
 package vehicle.car
 
-import vehicle.Vehicle
-import vehicle.brands.Brand
-import vehicle.brands.BrandName
-import vehicle.car.`body type`.Body
+import vehicle.AVehicle
+import vehicle.brands.IBrand
+import vehicle.brands.IBrandName
+import vehicle.car.`body type`.IBody
 
-open class Car(private val valueBrandName : BrandName) : Vehicle(), Body, Brand
+open class Car(private val valueIBrandName : IBrandName) : AVehicle(), IBody, IBrand
 {
 	init
 	{
@@ -13,7 +13,7 @@ open class Car(private val valueBrandName : BrandName) : Vehicle(), Body, Brand
 	}
 	
 	final override val brandName : String
-		get() = valueBrandName.brandName.toString()
+		get() = valueIBrandName.brandName.toString()
 	override val bodyName : String
 		get() = "Body Base"
 	override val maxSpeedKmH : Float = 500.0f

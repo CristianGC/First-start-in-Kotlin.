@@ -1,6 +1,6 @@
 package principles.solid
 
-class Chef(override var name : String) : Worker(),  Name, PrintName
+class Chef(override var name : String) : AWorker(), IName, IPrintName
 {
 	final override val theNameofTheSpecialty : String
 		get() = "Chef"

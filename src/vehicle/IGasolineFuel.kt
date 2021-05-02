@@ -1,6 +1,6 @@
 package vehicle
 
-interface GasolineFuel
+interface IGasolineFuel
 {
 	var gasolineFuel : Int
 }
