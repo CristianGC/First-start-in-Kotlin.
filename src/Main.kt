@@ -1,4 +1,7 @@
 import principles.solid.*
+import principles.solid.d.Car
+import principles.solid.d.WheelsWithSummerTires
+import principles.solid.d.WheelsWithWinterTires
 import vehicle.car.ACreateCar
 import principles.solid.o.*
 
@@ -22,11 +25,19 @@ fun main()
 	printAllName.printlnName()
 	*/
 	
-	var post1 = PostCar("PostCarr","TESLA")
-	var post2 = PostPhoto("PostPhoto","TESLA")
+	val post1 = PostCar("PostCarr","TESLA")
+	val post2 = PostPhoto("PostPhoto","TESLA")
 	
 	APost.Display(post1).post()
 	APost.Display(post2).post()
+	
+	val wheelsWinter = WheelsWithWinterTires()
+	wheelsWinter.wheelDiameter = 17
+	val wheelsSummer = WheelsWithSummerTires()
+	wheelsSummer.wheelDiameter = 23
+	val car1 = Car()
+	car1.changeNewWheels(wheelsWinter)
+	car1.changeNewWheels(wheelsSummer)
 }
 
 fun printalAllNameSpeciality(arrayValue : Array<AWorker>)
