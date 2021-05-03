@@ -1,4 +1,9 @@
 package principles.solid.l
 
-class FrontendDeveloper : Person()
-{}
+class FrontendDeveloper : Person(), ICompanyWorkers
+{
+	override fun accessToTheDoor()
+	{
+		TODO("Not yet implemented")
+	}
+}

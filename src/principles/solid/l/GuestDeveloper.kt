@@ -1,4 +1,4 @@
 package principles.solid.l
 
-class GuestDeveloper : Person()
+class GuestDeveloper : Person(), IGuestWorker
 {}
