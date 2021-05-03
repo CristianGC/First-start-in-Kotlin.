@@ -1,6 +1,6 @@
-package principles.solid.l
+package principles.solid.i
 
-class Dog : AAnimal(), IWalks, ISwimming
+class Cat : AAnimal(), IWalks
 {
 	override var name : String
 		get() = TODO("Not yet implemented")
@@ -9,11 +9,6 @@ class Dog : AAnimal(), IWalks, ISwimming
 		}
 	
 	override fun walks()
-	{
-		TODO("Not yet implemented")
-	}
-	
-	override fun swimming()
 	{
 		TODO("Not yet implemented")
 	}

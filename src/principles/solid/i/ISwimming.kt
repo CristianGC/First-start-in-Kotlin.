@@ -1,4 +1,4 @@
-package principles.solid.l
+package principles.solid.i
 
 interface ISwimming
 {

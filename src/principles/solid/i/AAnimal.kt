@@ -1,4 +1,4 @@
-package principles.solid.l
+package principles.solid.i
 
 abstract class AAnimal : IName
 {}
