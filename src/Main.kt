@@ -1,5 +1,6 @@
 import principles.solid.*
 import vehicle.car.ACreateCar
+import principles.solid.o.*
 
 fun main()
 {
@@ -20,6 +21,12 @@ fun main()
 	val printAllName = PrintAllName(Chef("Kalia"))
 	printAllName.printlnName()
 	*/
+	
+	var post1 = PostCar("PostCarr","TESLA")
+	var post2 = PostPhoto("PostPhoto","TESLA")
+	
+	APost.Display(post1).post()
+	APost.Display(post2).post()
 }
 
 fun printalAllNameSpeciality(arrayValue : Array<AWorker>)
