@@ -1,12 +1,6 @@
 SOLID:
 
 Principii solide
-S - responsabilitate exclusivă
-O - deschis-închis
-L - Înlocuire Liskov
-I - Separarea interfețelor
-D - inversarea dependențelor
-
 S - Principiul responsabilității unice
 O - Principiul deschiderii / închiderii
 L - Principiul de înlocuire Liskov
