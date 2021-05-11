@@ -1,6 +1,7 @@
 package startINjava;
 
 import startINjava._class.attributes.Attributes;
+import startINjava._class.methods.Methods;
 import startINjava.oop.*;
 
 public class Main {
@@ -27,6 +28,11 @@ public class Main {
         myAttributes.x = 10;
         myAttributes.y = 10;
         //myAttributes.z = 10;
+
+        Methods myMethods = new Methods();
+        myMethods.myPublicMethod();
+        myMethods.fullThrottle();
+        myMethods.speed(100);
 
     }
 }
