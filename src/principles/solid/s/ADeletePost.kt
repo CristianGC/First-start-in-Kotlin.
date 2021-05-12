@@ -1,6 +1,6 @@
 package principles.solid.s
 
-abstract class DeletePost
+abstract class ADeletePost
 {
 	abstract fun delete()
 }

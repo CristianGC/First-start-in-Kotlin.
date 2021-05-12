@@ -2,5 +2,5 @@ package principles.solid.s
 
 interface IDeletePost
 {
-	fun delete()
+	fun delete(delete : ADeletePost)
 }

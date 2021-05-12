@@ -2,5 +2,5 @@ package principles.solid.s
 
 interface IEditPost
 {
-	fun edit()
+	fun edit(edit : AEditPost)
 }

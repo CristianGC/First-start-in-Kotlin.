@@ -7,13 +7,13 @@ class Post : ICreatePost, IEditPost, IDeletePost
 		create.create()
 	}
 	
-	override fun edit()
+	override fun edit(edit : AEditPost)
 	{
-		TODO("Not yet implemented")
+		edit.edit()
 	}
 	
-	override fun delete()
+	override fun delete(delete : ADeletePost)
 	{
-		TODO("Not yet implemented")
+		delete.delete()
 	}
 }
